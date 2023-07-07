@@ -70,9 +70,6 @@ export default function Exchange({ isLoading, setIsLoading }) {
                     dispatch({ type: "missing provider" });
                 }
 
-                setTimeout(() => {
-                    resolve(true);
-                }, 1000);
                 return () => {
                     window.ethereum.removeListener("chainChanged", getNetwork);
                     window.ethereum.removeListener("accountsChanged", refreshAccounts);
