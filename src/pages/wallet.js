@@ -6,20 +6,21 @@ import apy from 'assets/images/apy.png';
 import BenefitsSection from "layouts/benefits-section";
 import Header from "layouts/header";
 import { SectionHeadingDescription } from "components/section-heading-description";
-import { ChartBlock } from "components/chart-block";
 import swapDescription from 'assets/images/swap-description.png';
 import launchpadDescription from 'assets/images/launchpad-description.png';
-import WalletTestimonials from "layouts/wallet-testimonials";
 import Footer from "layouts/footer";
 import Loader from "layouts/loader";
-import useLoader from "hooks/useLoader";
 import { useNavigate } from "react-router-dom";
+import { Suspense,lazy } from "react";
 
-export default function Wallet({isLoading,setIsLoading}) {
-    useLoader(setIsLoading);
+const WalletTestimonials = lazy(() => import("layouts/wallet-testimonials"));
+const ChartBlock = lazy(() => import("components/chart-block").then(module => {
+    return {default: module.ChartBlock}
+}))
+export default function Wallet() {
     const navigate = useNavigate();
     return (
-        <>
+        <Suspense fallback={<Loader/>}>
             <div className="wallet-header"><Header /></div>
             <div className="wallet-app">
                 <SectionHeading heading={["CHOOSE YOUR OPTION TO FLY THE SKY"]} />
@@ -36,8 +37,6 @@ export default function Wallet({isLoading,setIsLoading}) {
                 <WalletTestimonials />
                 <Footer />
             </div>
-            {isLoading &&
-                <Loader />}
-        </>
+        </Suspense>
     )
 }

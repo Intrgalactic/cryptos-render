@@ -5,7 +5,7 @@ import { animateVariant } from 'pages/home';
 import { NavBtn } from 'components/nav-btn';
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
-import { CtaBtn } from 'components/cta-btn';
+
 export default function Header(props) {
     const [toggle, setToggle] = useState(false);
     const navRef = useRef();

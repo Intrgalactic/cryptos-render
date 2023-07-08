@@ -20,6 +20,7 @@
     "jotai-immer": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-lazy-load-image-component": "^1.6.0",
     "react-redux": "^8.1.1",
     "react-router-dom": "^6.13.0",
     "web-vitals": "^2.1.4"

@@ -1,14 +1,18 @@
 import { SectionHeading } from "components/section-heading";
-import Incentive from "layouts/callout";
 import Header from "layouts/header";
-import RegisterSection from "components/register-section";
 import Faq from "layouts/faq";
-import { FaqRecord } from "components/faq-record";
 import { motion } from "framer-motion";
 import Footer from "layouts/footer";
+import { Suspense, lazy } from "react";
+import Loader from "layouts/loader";
+const FaqRecord = lazy(() => import("components/faq-record").then(module => {
+    return {default:module.FaqRecord}
+}))
+const Incentive = lazy(() => import("layouts/callout"));
+const RegisterSection = lazy(() => import("components/register-section"));
 export default function SignUp() {
     return (
-        <>
+        <Suspense fallback={<Loader/>}>
             <Header />
             <div className="register-app">
                 <Incentive class="register__incentive">
@@ -47,6 +51,6 @@ export default function SignUp() {
                 </Faq>
                 <Footer/>
             </div>
-        </>
+        </Suspense>
     )
 }

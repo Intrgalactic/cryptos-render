@@ -1,4 +1,3 @@
-import { CtaBtn } from "components/cta-btn";
 import { motion } from "framer-motion";
 import { fadeInVariants } from "./testimonials";
 export default function Incentive(props) {

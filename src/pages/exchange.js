@@ -1,24 +1,37 @@
 import Header from "layouts/header";
-import { SwapWidget } from "@uniswap/widgets";
 import "@uniswap/widgets/fonts.css";
-import { CtaBtn } from "components/cta-btn";
 import { ethers } from "ethers";
-import ExchangeNav from "layouts/exchange-nav";
-import { SwapWidgets } from "layouts/swap-widgets";
 import Loader from "layouts/loader";
-import useLoader from "hooks/useLoader";
-import { useEffect, useState, useReducer, useRef } from "react";
+import { useEffect, useState, useReducer, useRef, lazy, Suspense } from "react";
 import { setSessionStorageItem, convertNetworkName } from "utils/utilities";
 import useSessionStorage from "hooks/useSessionStorage";
-import { SwapWidgetBox } from "components/swap-widget-box";
-import { LockedBox } from "components/locked-box";
-import { ErrorPopup } from "components/error-popup";
-import { BlockchainUserRecord } from "components/blockchain-record";
-import { SectionHeading } from "components/section-heading";
 import { setup1inchWidget } from "@1inch/embedded-widget";
 import Footer from "layouts/footer";
-import { MoveArrows } from "components/move-arrows";
-import useLocalStorage from "hooks/useSessionStorage";
+import { CtaBtn } from "components/cta-btn";
+import { SectionHeading } from "components/section-heading";
+
+const  SwapWidget = lazy(() => import('@uniswap/widgets').then(module => {
+    return {default: module.SwapWidget};
+}))
+const SwapWidgets = lazy(() => import("layouts/swap-widgets"));
+
+const  SwapWidgetBox = lazy(() => import('components/swap-widget-box').then(module => {
+    return {default: module.SwapWidgetBox};
+}))
+
+const BlockchainUserRecord = lazy(() => import("components/blockchain-record").then(module => {
+    return {default: module.BlockchainUserRecord};
+}))
+const LockedBox = lazy(() => import("components/locked-box").then(module => {
+    return {default: module.LockedBox};
+}))
+const ErrorPopup = lazy(() => import("components/error-popup").then(module => {
+    return {default: module.ErrorPopup};
+}))
+const MoveArrows = lazy(() => import("components/move-arrows").then(module => {
+    return {default:module.MoveArrows}
+}))
+const ExchangeNav = lazy(() => import("layouts/exchange-nav"))
 
 export default function Exchange({ isLoading, setIsLoading }) {
     const initialErrState = {
@@ -70,6 +83,9 @@ export default function Exchange({ isLoading, setIsLoading }) {
                     dispatch({ type: "missing provider" });
                 }
 
+                setTimeout(() => {
+                    resolve(true);
+                }, 1000);
                 return () => {
                     window.ethereum.removeListener("chainChanged", getNetwork);
                     window.ethereum.removeListener("accountsChanged", refreshAccounts);
@@ -163,9 +179,8 @@ export default function Exchange({ isLoading, setIsLoading }) {
         }
     }
     return (
-        <>
+        <Suspense fallback={<Loader/>}>
             <Header />
-
             <div className="exchange-app">
                 <SectionHeading heading={["swap your cryptocurrency within seconds"]} />
                 {!isProviderMissing && !error.isError &&
@@ -194,7 +209,7 @@ export default function Exchange({ isLoading, setIsLoading }) {
                                     </LockedBox> : null}
                             </SwapWidgetBox>
                         </SwapWidgets>
-                        <MoveArrows ref={swapWidgetsRef} />
+                            <MoveArrows ref={swapWidgetsRef} />
                     </>
                 }
             </div>
@@ -202,9 +217,7 @@ export default function Exchange({ isLoading, setIsLoading }) {
                 <ErrorPopup errReason={error.errorReason} errDescription={error.errorDescription} /> : null
             }
             <Footer />
-            {isLoading &&
-                <Loader />}
-
-        </>
+          
+        </Suspense>
     )
 }

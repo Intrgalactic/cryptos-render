@@ -2,10 +2,14 @@ import basic from 'assets/images/basic.png';
 import standard from 'assets/images/standard.png';
 import premium from 'assets/images/premium.png';
 import { SectionHeading } from 'components/section-heading';
-import { PricingBox } from 'components/pricing-box';
-import { SectionHeadingDescription } from 'components/section-heading-description';
-import { MoveArrows } from 'components/move-arrows';
-import { useRef } from 'react';
+import { useRef, lazy, Suspense } from 'react';
+
+const PricingBox = lazy(() => import("components/pricing-box").then(module => {
+    return { default: module.PricingBox }
+}))
+const MoveArrows = lazy(() => import("components/move-arrows").then(module => {
+    return { default: module.MoveArrows }
+}))
 
 export default function PricingSection() {
     const pricingRef = useRef();
@@ -14,11 +18,15 @@ export default function PricingSection() {
             <SectionHeading heading={["don't hestitate while you can earn"]} />
             <section className="pricing">
                 <div className="pricing__records" ref={pricingRef}>
-                    <PricingBox image={basic} alt="basic package" abilities={["ACCESS TO MARKET", "LEVERAGE ACCESS", "BASIC CHARTS"]} type="basic" />
-                    <PricingBox image={standard} alt="standard package" abilities={["ACCESS TO LAUNCHPAD", "CHAT WITH MEMBERS", "LOW CHART DELAY"]} type="standard" />
-                    <PricingBox image={premium} alt="premium package" abilities={["LOWEST DELAY", "CHAT WITH ANALYSTS", "PREMIUM CHARTS"]} type="premium" />
+                    <Suspense fallback={<p>Loading...</p>}>
+                        <PricingBox image={basic} alt="basic package" abilities={["ACCESS TO MARKET", "LEVERAGE ACCESS", "BASIC CHARTS"]} type="basic" />
+                        <PricingBox image={standard} alt="standard package" abilities={["ACCESS TO LAUNCHPAD", "CHAT WITH MEMBERS", "LOW CHART DELAY"]} type="standard" />
+                        <PricingBox image={premium} alt="premium package" abilities={["LOWEST DELAY", "CHAT WITH ANALYSTS", "PREMIUM CHARTS"]} type="premium" />
+                    </Suspense>
                 </div>
-                <MoveArrows ref={pricingRef} />
+                <Suspense fallback={<p>Loading...</p>}>
+                    <MoveArrows ref={pricingRef} />
+                </Suspense>
             </section>
         </>
     )

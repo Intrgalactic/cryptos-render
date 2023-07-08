@@ -1,8 +1,15 @@
 import { SectionHeading } from "components/section-heading";
-import { CompaniesStars } from "components/companies-stars";
-import { CompaniesLogos } from "components/companies-logos";
 import { motion } from "framer-motion";
 import { fadeInVariants } from "./testimonials";
+import { lazy } from "react";
+
+const CompaniesStars = lazy(() => import("components/companies-stars").then(module => {
+    return {default:module.CompaniesStars}
+}))
+const CompaniesLogos = lazy(() => import("components/companies-logos").then(module => {
+    return {default:module.CompaniesLogos}
+}))
+
 export default function CompaniesBar() {
     return (
         <>

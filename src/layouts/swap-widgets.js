@@ -8,4 +8,5 @@ function SwapWidgetsBox(props,ref) {
     )
 }
 
-export const SwapWidgets = forwardRef(SwapWidgetsBox);
+const SwapWidgets = forwardRef(SwapWidgetsBox);
+export default SwapWidgets;

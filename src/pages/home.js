@@ -1,23 +1,24 @@
 import BenefitsSection from "layouts/benefits-section";
-import Webinar from "layouts/callout";
 import ChartSection from "layouts/chart-section";
-import CompaniesBar from "layouts/companies-bar";
 import Header from "layouts/header";
 import Hero from "layouts/hero";
 import Testimonials from "layouts/testimonials";
-import VideoSection from "layouts/video-section";
-import News from "layouts/news";
 import Footer from "layouts/footer";
-import { BenefitBox } from "components/benefit-box";
 import fixedRates from 'assets/images/fixed-rates.png';
 import earnFromZero from 'assets/images/earn-from-zero.png';
 import scalableInterface from 'assets/images/scalable-interface.png';
 import { CtaBtn } from "components/cta-btn";
 import { SectionHeading } from "components/section-heading";
 import Loader from "layouts/loader";
-import useLoader from "hooks/useLoader";
 import Incentive from "layouts/callout";
-import { CustomBtn } from "components/custom-btn";
+import { Suspense, lazy } from "react";
+
+const VideoSection = lazy(() => import("layouts/video-section"));
+const News = lazy(() => import("layouts/news"));
+const CompaniesBar = lazy(() => import("layouts/companies-bar"));
+const BenefitBox = lazy(() => import("components/benefit-box").then(module => {
+    return {default:module.BenefitBox}
+}))
 export const animateVariant = {
     visible: {
         opacity: 1,
@@ -32,10 +33,9 @@ export const animateVariant = {
     },
 
 }
-export default function Home({ isLoading, setIsLoading }) {
-    useLoader(setIsLoading);
+export default function Home() {
     return (
-        <>
+        <Suspense fallback={<Loader/>}>
             <Header />
             <Hero />
             <SectionHeading heading={["stop focusing on things which", <br />, "take too much time"]} />
@@ -55,8 +55,6 @@ export default function Home({ isLoading, setIsLoading }) {
             </Incentive>
             <News />
             <Footer />
-            {isLoading &&
-                <Loader />}
-        </>
+        </Suspense>
     )
 }
