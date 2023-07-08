@@ -33,7 +33,7 @@ const MoveArrows = lazy(() => import("components/move-arrows").then(module => {
 }))
 const ExchangeNav = lazy(() => import("layouts/exchange-nav"))
 
-export default function Exchange({ isLoading, setIsLoading }) {
+export default function Exchange() {
     const initialErrState = {
         errorReason: '',
         errorDescription: '',
@@ -90,8 +90,6 @@ export default function Exchange({ isLoading, setIsLoading }) {
                     window.ethereum.removeListener("chainChanged", getNetwork);
                     window.ethereum.removeListener("accountsChanged", refreshAccounts);
                 }
-            }).then(() => {
-                setIsLoading(false);
             });
         }
         catch (err) {
