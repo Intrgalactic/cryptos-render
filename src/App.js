@@ -4,7 +4,6 @@ import Home from 'pages/home';
 import Pricing from 'pages/pricing';
 import Exchange from 'pages/exchange';
 import Wallet from 'pages/wallet';
-import { useState } from 'react';
 import SignUp from 'pages/sign-up';
 
 function App() {

@@ -14,9 +14,9 @@ const rotateVariants = {
 export function CompaniesStars() {
     return (
         <div className="companies-bar__stars" >
-            <motion.img src={companyStar} alt="company-star" variants={rotateVariants} animate="visible"/>
-            <motion.img src={companyStar} alt="company-star" variants={rotateVariants} animate="visible"/>
-            <motion.img src={companyStar} alt="company-star" variants={rotateVariants} animate="visible"/>
+            <motion.img src={companyStar} alt="company-star" variants={rotateVariants} animate="visible" loading='lazy'/>
+            <motion.img src={companyStar} alt="company-star" variants={rotateVariants} animate="visible" loading='lazy'/>
+            <motion.img src={companyStar} alt="company-star" variants={rotateVariants} animate="visible" loading='lazy'/>
         </div>
     )
 }

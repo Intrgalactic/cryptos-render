@@ -6,12 +6,12 @@ import { CustomBtn } from './custom-btn';
 export function PricingBox({ image, alt, abilities, type }) {
     return (
         <div className="pricing__box">
-            <img src={image} alt={alt} className="subscription-level" />
+            <img src={image} alt={alt} className="subscription-level" loading="lazy"/>
             <h3 className="pricing__subscription-type">{type}</h3>
             <div className="pricing__box-abilities">
                 {abilities.map((ability, index) => (
                     <div className="pricing__box-abilities-record" key={index}>
-                        <img src={check} alt="checkbox" />
+                        <img src={check} alt="checkbox" loading="lazy"/>
                         <p className="pricing__ability">{ability}</p>
                     </div>
                 ))}

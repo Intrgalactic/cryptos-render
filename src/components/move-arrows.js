@@ -20,8 +20,8 @@ export const MoveArrows = forwardRef((props, ref) => {
     }
     return (
         <div className="move-arrows">
-            <img src={moveArr} alt="move arrow" onClick={(e) => { scrollToElement(e) }} className='left-move-arrow' />
-            <img src={moveArr} alt="move arrow" onClick={(e) => { scrollToElement(e) }} className="right-move-arrow" />
+            <img src={moveArr} alt="move arrow" onClick={(e) => { scrollToElement(e) }} className='left-move-arrow' loading='lazy'/>
+            <img src={moveArr} alt="move arrow" onClick={(e) => { scrollToElement(e) }} className="right-move-arrow" loading='lazy'/>
         </div>
     )
 })
