@@ -6,7 +6,7 @@ export function WalletBenefitBox({ images, alt, heading, description, btnText })
     return (
         <div className="wallet__benefit-box">
             <Picture images={images}>
-                <img src={images[1]} alt={alt} />
+                <img src={images[0]} alt={alt} />
             </Picture>
             <SectionHeading heading={heading} />
             <p>{description}</p>

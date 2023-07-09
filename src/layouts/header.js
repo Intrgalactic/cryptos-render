@@ -41,7 +41,7 @@ export default function Header(props) {
         <motion.header variants={animateVariant} animate="visible" initial="hidden" className={props.class}>
             <Link to='/'>
                 <Picture images={[logo,webpLogo]}>
-                    <img src={webpLogo} alt="company logo" />
+                    <img src={logo} alt="company logo" />
                 </Picture>
             </Link>
             <NavBtn toggleNav={toggleNav} />

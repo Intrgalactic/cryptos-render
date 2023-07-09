@@ -9,14 +9,14 @@ export function PricingBox({ images, alt, abilities, type }) {
     return (
         <div className="pricing__box">
             <Picture images={images}>
-                <img src={images[1]} alt={alt} className="subscription-level" loading="lazy" />
+                <img src={images[0]} alt={alt} className="subscription-level" loading="lazy" />
             </Picture>
             <h3 className="pricing__subscription-type">{type}</h3>
             <div className="pricing__box-abilities">
                 {abilities.map((ability, index) => (
                     <div className="pricing__box-abilities-record" key={index}>
                         <Picture images={[check, webpCheck]}>
-                            <img src={webpCheck} alt="checkbox" loading="lazy" />
+                            <img src={check} alt="checkbox" loading="lazy" />
                         </Picture>
                         <p className="pricing__ability">{ability}</p>
                     </div>
