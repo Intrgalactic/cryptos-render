@@ -2372,6 +2372,7 @@ header nav {
   }
 
   .error-popup {
+    margin-top:50px;
     width: 80vw;
     height: 230px;
   }
