@@ -1,5 +1,7 @@
 import moveArr from 'assets/images/news-move-arrow.png';
+import webpMoveArr from 'assets/images/news-move-arrow.webp';
 import { forwardRef, useState } from 'react';
+import { Picture } from './picture';
 
 export const MoveArrows = forwardRef((props, ref) => {
     const [scrollCount, setScrollCount] = useState(0);
@@ -20,8 +22,12 @@ export const MoveArrows = forwardRef((props, ref) => {
     }
     return (
         <div className="move-arrows">
-            <img src={moveArr} alt="move arrow" onClick={(e) => { scrollToElement(e) }} className='left-move-arrow' loading='lazy'/>
-            <img src={moveArr} alt="move arrow" onClick={(e) => { scrollToElement(e) }} className="right-move-arrow" loading='lazy'/>
+            <Picture images={[moveArr,webpMoveArr]}>
+                <img src={webpMoveArr} alt="move arrow" onClick={(e) => { scrollToElement(e) }} className='left-move-arrow' loading='lazy' />
+            </Picture>
+            <Picture images={[moveArr,webpMoveArr]}>
+                <img src={webpMoveArr} alt="move arrow" onClick={(e) => { scrollToElement(e) }} className='right-move-arrow' loading='lazy'/>
+            </Picture>
         </div>
     )
 })

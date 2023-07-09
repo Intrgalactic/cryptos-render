@@ -1,5 +1,7 @@
 import footerShape from 'assets/images/footer-shape.png';
 import logo from 'assets/images/logo.png';
+import webpLogo from 'assets/images/logo.webp';
+import { Picture } from 'components/picture';
 import { Suspense, lazy } from 'react';
 
 const FooterLinks = lazy(() => import("components/footer-links").then(module => {
@@ -13,9 +15,11 @@ const CompaniesLogos = lazy(() => import("components/companies-logos").then(modu
 export default function Footer() {
     return (
         <>
-            <img src={footerShape} alt="footer shape" className="footer-shape"></img>
+            <img src={footerShape} alt="footer shape" className="footer-shape" width="100%" height="100%"></img>
             <footer>
-                <img src={logo} alt="cryptos logo" />
+                <Picture images={[logo, webpLogo]}>
+                    <img src={webpLogo} alt="cryptos logo" />
+                </Picture>
                 <div className="footer__links">
                     <Suspense fallback={<p>Loading...</p>}>
                         <FooterLinks column="first column" links={["first page", "second page", "third page", "fourth page"]} />

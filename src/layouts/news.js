@@ -1,6 +1,8 @@
 import { SectionHeading } from "components/section-heading";
 import firstNewsImage from 'assets/images/news-example-image.jpg';
 import secondNewsImage from 'assets/images/second_news-example-image.jpg';
+import webpFirstNewsImage from 'assets/images/news-example-image.webp';
+import webpSecondNewsImage from 'assets/images/second_news-example-image.webp';
 import { Suspense, lazy, useRef } from "react";
 
 const MoveArrows = lazy(() => import("components/move-arrows").then(module => {
@@ -20,8 +22,8 @@ export default function News() {
             </div>
             <div className="news__records" ref={newsRef}>
                 <Suspense fallback={<p>Loading...</p>}>
-                    <NewsBox image={firstNewsImage} alt="nasdaq session news presentation" heading="LATEST NASDAQ SESSION" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
-                    <NewsBox image={secondNewsImage} alt="altcoin recession presentation" heading="ALTCOIN RECESSION" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
+                    <NewsBox images={[firstNewsImage,webpFirstNewsImage]} alt="nasdaq session news presentation" heading="LATEST NASDAQ SESSION" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
+                    <NewsBox images={[secondNewsImage,webpSecondNewsImage]} alt="altcoin recession presentation" heading="ALTCOIN RECESSION" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" />
                 </Suspense>
             </div>
             <Suspense fallback={<p>Loading...</p>}>

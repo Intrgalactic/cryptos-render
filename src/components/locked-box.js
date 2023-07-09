@@ -1,8 +1,12 @@
 import warning from 'assets/images/warning.png';
-export function LockedBox({children}) {
+import webpWarning from 'assets/images/warning.webp';
+import { Picture } from './picture';
+export function LockedBox({ children }) {
     return (
         <div className="locked-box">
-            <img src={warning} alt="warning" loading='lazy'/>
+            <Picture images={[warning, webpWarning]}>
+                <img src={webpWarning} alt="warning" loading='lazy' />
+            </Picture>
             <p>Please connect your wallet</p>
             {children}
         </div>

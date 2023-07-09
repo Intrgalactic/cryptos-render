@@ -4,6 +4,8 @@ import { SectionRightBlock } from "components/section-right-block";
 import { motion } from "framer-motion";
 import { animateVariant } from "pages/home";
 import hero from 'assets/images/hero-img.png';
+import webpHero from 'assets/images/hero-img.webp';
+import { Picture } from "components/picture";
 export default function Hero() {
     return (
         <motion.section className="hero" variants={animateVariant} initial="hidden" animate="visible">
@@ -13,7 +15,9 @@ export default function Hero() {
                 <HeroBtn />
             </SectionLeftBlock>
             <SectionRightBlock class="hero__right-block">
-                <img src={hero} alt="Enterpreneur Woman" />
+                <Picture images={[hero, webpHero]}>
+                    <img src={webpHero} alt="Enterpreneur Woman" />
+                </Picture>
             </SectionRightBlock>
         </motion.section>
     )

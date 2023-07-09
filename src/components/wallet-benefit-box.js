@@ -1,13 +1,16 @@
 import { CtaBtn } from "./cta-btn";
+import { Picture } from "./picture";
 import { SectionHeading } from "./section-heading";
 
-export function WalletBenefitBox({image,alt,heading,description,btnText}) {
+export function WalletBenefitBox({ images, alt, heading, description, btnText }) {
     return (
         <div className="wallet__benefit-box">
-            <img src={image} alt={alt}/>
-            <SectionHeading heading={heading}/>
+            <Picture images={images}>
+                <img src={images[1]} alt={alt} />
+            </Picture>
+            <SectionHeading heading={heading} />
             <p>{description}</p>
-            <CtaBtn btnText={btnText}/>
+            <CtaBtn btnText={btnText} />
         </div>
     )
 }
