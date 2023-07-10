@@ -28,7 +28,7 @@ html {
 
 section:not(.testimonials, .video-section, .companies-bar, .incentive, .news, .faq, .wallet__testimonials, .pricing),
 header {
-  margin-inline: 10vw;
+  padding-inline: 10vw;
 }
 
 .hero__heading,
@@ -53,8 +53,8 @@ body {
   margin: 0;
   position: relative;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -87,17 +87,17 @@ body {
 
 @keyframes loader-spin {
   0% {
-    transform: rotate(0deg);
+      transform: rotate(0deg);
   }
 
   100% {
-    transform: rotate(360deg);
+      transform: rotate(360deg);
   }
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+      monospace;
 }
 
 button {
@@ -132,6 +132,7 @@ header img {
 header nav {
   display: flex;
   gap: 5vw;
+
 }
 
 .exchange-nav {
@@ -143,7 +144,7 @@ header nav {
 
 header nav a {
   color: black;
-  font-family: Roboto-Regular;
+  font-family: Exo2-ExtraBold;
   text-transform: uppercase;
   text-decoration: none;
   font-size: clamp(1rem, 1.4vw, 1.2em);
@@ -169,6 +170,7 @@ header nav a {
 .hero__right-block {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .hero__heading {
@@ -178,11 +180,9 @@ header nav a {
 }
 
 .hero__highlighted {
-  background-image:url('assets/images/text-highlight.jpg');
-  background-image: image-set(
-    url('assets/images/text-highlight.webp') type('image/webp'),
-    url('assets/images/text-highlight.jpg') type('image/jpeg')
-  );
+  background-image: url('assets/images/text-highlight.jpg');
+  background-image: image-set(url('assets/images/text-highlight.webp') type('image/webp'),
+          url('assets/images/text-highlight.jpg') type('image/jpeg'));
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -255,9 +255,10 @@ header nav a {
 }
 
 .swap-widget__box .locked-box img {
-  max-width: 60%;
+  max-width: 90%;
+  width: 60%;
   flex-basis: 100%;
-  height: 45%;
+  height: 80%;
   display: block;
   margin: auto;
 }
@@ -281,13 +282,13 @@ header nav a {
 
 @keyframes h1-fade {
   0% {
-    opacity: 0;
-    transform: translateY(-100px);
+      opacity: 0;
+      transform: translateY(-100px);
   }
 
   100% {
-    opacity: 1;
-    transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
   }
 }
 
@@ -310,11 +311,9 @@ header nav a {
 }
 
 .benefit-box {
-  background-image:url('assets/images/benefit-box-bg.jpg');
-  background-image: image-set(
-    url('assets/images/benefit-box-bg.webp') type('image/webp'),
-    url('assets/images/benefit-box-bg.jpg') type('image/jpeg')
-  );
+  background-image: url('assets/images/benefit-box-bg.jpg');
+  background-image: image-set(url('assets/images/benefit-box-bg.webp') type('image/webp'),
+          url('assets/images/benefit-box-bg.jpg') type('image/jpeg'));
   background-size: cover;
   width: 20vw;
   border-radius: 20px;
@@ -378,11 +377,9 @@ video,
   left: -15vw;
   content: '';
   width: 105vw;
-  background-image:url('assets/images/equities-chart-bg.jpg');
-  background-image: image-set(
-    url('assets/images/equities-chart-bg.webp') type('image/webp'),
-    url('assets/images/equities-chart-bg.jpg') type('image/jpeg')
-  );
+  background-image: url('assets/images/equities-chart-bg.jpg');
+  background-image: image-set(url('assets/images/equities-chart-bg.webp') type('image/webp'),
+          url('assets/images/equities-chart-bg.jpg') type('image/jpeg'));
   background-size: cover;
   background-repeat: repeat;
   filter: blur(4px);
@@ -390,11 +387,9 @@ video,
 }
 
 .chart-block:last-of-type:after {
-  background-image:url('assets/images/investment-chart-bg.jpg');
-  background-image: image-set( 
-    url('assets/images/investment-chart-bg.webp') type('image/webp'),
-    url('assets/images/investment-chart-bg.jpg') type('image/jpeg')
-  )
+  background-image: url('assets/images/investment-chart-bg.jpg');
+  background-image: image-set(url('assets/images/investment-chart-bg.webp') type('image/webp'),
+          url('assets/images/investment-chart-bg.jpg') type('image/jpeg'))
 }
 
 .chart-block__description-heading {
@@ -434,11 +429,9 @@ video,
 }
 
 video {
-  background-image:url('assets/images/video-bg.jpg');
-  background-image: image-set(
-    url('assets/images/video-bg.webp') type('image/webp'),
-    url('assets/images/video-bg.jpg') type('image/jpeg')
-  );
+  background-image: url('assets/images/video-bg.jpg');
+  background-image: image-set(url('assets/images/video-bg.webp') type('image/webp'),
+          url('assets/images/video-bg.jpg') type('image/jpeg'));
   background-size: 100% 100%;
   width: 50vw;
   height: 600px;
@@ -446,11 +439,9 @@ video {
 }
 
 .video-section {
-  background-image:url('assets/images/video-block-bg.jpg');
-  background-image: image-set(
-    url('assets/images/video-block-bg.webp') type('image/webp'),
-    url('assets/images/video-block-bg.jpg') type('image/jpeg')
-  );
+  background-image: url('assets/images/video-block-bg.jpg');
+  background-image: image-set(url('assets/images/video-block-bg.webp') type('image/webp'),
+          url('assets/images/video-block-bg.jpg') type('image/jpeg'));
   background-size: cover;
   background-repeat: no-repeat;
   padding-block: 50px;
@@ -473,11 +464,9 @@ video {
   transform: translate(-50%, -50%);
   width: 200px;
   height: 200px;
-  background-image:url('assets/images/play-btn.png');
-  background-image: image-set(
-    url('assets/images/play-btn.webp') type('image/webp'),
-    url('assets/images/play-btn.png') type('image/png')
-  );
+  background-image: url('assets/images/play-btn.png');
+  background-image: image-set(url('assets/images/play-btn.webp') type('image/webp'),
+          url('assets/images/play-btn.png') type('image/png'));
   background-size: contain;
   background-repeat: no-repeat;
 
@@ -489,11 +478,9 @@ video {
   justify-content: space-around;
   position: relative;
   height: 600px;
-  background-image:url('assets/images/testimonials-bg.jpg');
-  background-image: image-set(
-    url('assets/images/testimonials-bg.webp') type('image/webp'),
-    url('assets/images/testimonials-bg.jpg') type('image/jpeg')
-  );
+  background-image: url('assets/images/testimonials-bg.jpg');
+  background-image: image-set(url('assets/images/testimonials-bg.webp') type('image/webp'),
+          url('assets/images/testimonials-bg.jpg') type('image/jpeg'));
   background-position-y: 80%;
   background-repeat: no-repeat;
   background-size: 110%;
@@ -503,11 +490,9 @@ video {
   width: 15vw;
   padding: 20px;
   height: 400px;
-  background-image:url('assets/images/testimonial-box-bg.jpg');
-  background-image: image-set(
-    url('assets/images/testimonial-box-bg.webp') type('image/webp'),
-    url('assets/images/testimonial-box-bg.jpg') type('image/jpeg')
-  );
+  background-image: url('assets/images/testimonial-box-bg.jpg');
+  background-image: image-set(url('assets/images/testimonial-box-bg.webp') type('image/webp'),
+          url('assets/images/testimonial-box-bg.jpg') type('image/jpeg'));
   background-size: cover;
   border-radius: 50px;
   box-shadow: 0px 4px 20px black;
@@ -676,11 +661,9 @@ video {
   display: flex;
   justify-content: space-evenly;
   color: white;
-  background-image:url('assets/images/webinar-bg.jpg');
-  background-image: image-set(
-    url('assets/images/webinar-bg.webp') type('image/webp'),
-    url('assets/images/webinar-bg.jpg') type('image/jpeg')
-  );
+  background-image: url('assets/images/webinar-bg.jpg');
+  background-image: image-set(url('assets/images/webinar-bg.webp') type('image/webp'),
+          url('assets/images/webinar-bg.jpg') type('image/jpeg'));
   height: 300px;
   align-items: center;
   margin-top: 150px;
@@ -723,11 +706,9 @@ video {
   width: 30vw;
   text-align: center;
   border-radius: 25px;
-  background-image:url('assets/images/news-bg.jpg');
-  background-image: image-set(
-    url('assets/images/news-bg.webp') type("image/webp"),
-    url('assets/images/news-bg.jpg')
-  );
+  background-image: url('assets/images/news-bg.jpg');
+  background-image: image-set(url('assets/images/news-bg.webp') type("image/webp"),
+          url('assets/images/news-bg.jpg'));
   height: 500px;
   text-align: left;
   color: white;
@@ -757,9 +738,6 @@ video {
   display: flex;
   margin-top: 50px;
   justify-content: space-between;
-}
-picture {
-  height: fit-content;
 }
 .left-move-arrow {
   transform: rotate(180deg);
@@ -823,12 +801,14 @@ footer img:first-of-type:not(footer .companies-bar__logos img) {
   font-family: Roboto-Bold;
 }
 
-.footer-shape {
+.footer-shape{
   margin-top: 150px;
   vertical-align: bottom;
   width: 100%;
 }
-
+.footer-shape:not(.pricing-app .footer-shape,.wallet-app .footer-shape) {
+  filter: invert(58%) sepia(100%) saturate(5634%) hue-rotate(206deg) brightness(95%) contrast(112%);
+}
 footer .companies-bar__logos {
   align-items: center;
   margin-top: 50px;
@@ -861,12 +841,9 @@ footer h3 {
 
 .pricing {
   margin-top: 50px;
-  background-color: #9c9c9c;
   background-image: url('assets/images/pricing-bg.jpg');
-  background-image: image-set(
-    url('assets/images/pricing-bg.webp') type('image/webp'),
-    url('assets/images/pricing-bg.jpg')
-  );
+  background-image: image-set(url('assets/images/pricing-bg.webp') type('image/webp'),
+          url('assets/images/pricing-bg.jpg'));
   background-size: cover;
   padding-block: 100px;
 }
@@ -893,38 +870,15 @@ footer h3 {
 
 .pricing__subscription-type,
 .pricing__box-abilities-record {
-  text-shadow: 1px 1px 1px #000,
-    -1px 1px 1px #000,
-    1px -1px 1px #000,
-    -1px -1px 1px grey,
-    0px 1px 1px #000,
-    0px -1px 1px #000,
-    -1px 0px 1px #000,
-    1px 0px 1px grey,
-    2px 2px 1px #000,
-    -2px 2px 1px #000,
-    2px -2px 1px #000,
-    -2px -2px 1px grey,
-    0px 2px 1px #000,
-    0px -2px 1px #000,
-    -2px 0px 1px grey,
-    2px 0px 1px #000,
-    1px 2px 1px #000,
-    -1px 2px 1px #000,
-    1px -2px 1px #000,
-    -1px -2px 1px #000,
-    2px 1px 1px #000,
-    -2px 1px 1px grey,
-    2px -1px 1px #000,
-    -2px -1px 1px #000;
+  text-shadow: 1px 3px 2px black;
 }
 
 .pricing__box {
   padding: 30px;
   width: 20vw;
-  background-image:url('assets/images/pricing-box-bg.jpg');
-  background-image: image-set(url('assets/images/pricing-bg.webp') type('image/webp'),
-      url('./assets/images/pricing-box-bg.jpg') type('image/jpeg'));
+  background-image: url('assets/images/pricing-box-bg.jpg');
+  background-image: image-set(url('assets/images/pricing-box-bg.webp') type('image/webp'),
+          url('./assets/images/pricing-box-bg.jpg') type('image/jpeg'));
   background-size: cover;
   z-index: 1;
   border-radius: 30px;
@@ -973,18 +927,15 @@ footer h3 {
   width: 80%;
   padding-inline: 10%;
 }
-
 .pricing-app .section-heading {
   margin-bottom: 0;
   margin-top: 100px;
 }
 
 .pricing-app .footer-shape {
-  background-image:url('assets/images/pricing-faq-bg-shape.jpg');
-  background-image: image-set(
-    url('assets/images/pricing-faq-bg-shape.webp') type('image/webp'),
-    url('assets/images/pricing-faq-bg-shape.jpg') type('image/jpeg')
-  );
+  background-image: url('assets/images/pricing-faq-bg-shape.jpg');
+  background-image: image-set(url('assets/images/pricing-faq-bg-shape.webp') type('image/webp'),
+          url('assets/images/pricing-faq-bg-shape.jpg') type('image/jpeg'));
   background-position-x: right;
   background-size: 100% 100%;
 }
@@ -1008,7 +959,19 @@ footer h3 {
   width: 80vw;
   padding-inline: 10%;
 }
-
+.faq-content-container {
+  display:flex;
+  gap:50px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.faq-questions {
+  margin-top:50px;
+  width: 30vw;
+  padding:50px;
+  border-radius:50px;
+  background-color: rgba(0,0,0,0.5);
+}
 .pricing-faq {
   margin-top: 0;
 }
@@ -1024,47 +987,22 @@ footer h3 {
 
 .pricing-app .faq {
   padding-block: 100px;
-  background-image:url('assets/images/pricing-faq-bg.jpg');
-  background-image: image-set(
-    url('assets/images/pricing-faq-bg.webp') type('image/webp'),
-    url('assets/images/pricing-faq-bg.jpg') type('image/jpeg')
-  );
+  background-image: url('assets/images/pricing-faq-bg.jpg');
+  background-image: image-set(url('assets/images/pricing-faq-bg.webp') type('image/webp'),
+          url('assets/images/pricing-faq-bg.jpg') type('image/jpeg'));
   background-size: 100% 100%;
   background-position: bottom;
   color: white;
-  text-shadow: 1px 1px 1px #000,
-    -1px 1px 1px #000,
-    1px -1px 1px #000,
-    -1px -1px 1px grey,
-    0px 1px 1px #000,
-    0px -1px 1px #000,
-    -1px 0px 1px #000,
-    1px 0px 1px grey,
-    2px 2px 1px #000,
-    -2px 2px 1px #000,
-    2px -2px 1px #000,
-    -2px -2px 1px grey,
-    0px 2px 1px #000,
-    0px -2px 1px #000,
-    -2px 0px 1px grey,
-    2px 0px 1px #000,
-    1px 2px 1px #000,
-    -1px 2px 1px #000,
-    1px -2px 1px #000,
-    -1px -2px 1px #000,
-    2px 1px 1px #000,
-    -2px 1px 1px grey,
-    2px -1px 1px #000,
-    -2px -1px 1px #000;
+  text-shadow: 1px 3px 3px #000;
+      
 }
 
-.pricing-app .faq__record h3:last-of-type {
-  margin-bottom: 0;
-}
 
 .faq__record p {
   font-family: Roboto-Bold;
   font-size: 1.5em;
+  width: 60%;
+  margin: auto;
 }
 
 .register__form-err {
@@ -1081,13 +1019,14 @@ footer h3 {
   box-shadow: 0px 2px 10px black;
   border-radius: 50%;
   width: 60%;
+  max-width: 80%;
   border-style: solid;
 }
 
 .wallet-header {
-  background-image:url('assets/images/header-bg.jpg');
+  background-image: url('assets/images/header-bg.jpg');
   background-image: image-set(url('assets/images/header-bg.webp') type("image/webp"),
-      url('assets/images/header-bg.jpg'));
+          url('assets/images/header-bg.jpg'));
   margin-inline: 0;
   width: 100vw;
   backdrop-filter: blur(5px);
@@ -1102,6 +1041,7 @@ footer h3 {
 
 .wallet-header nav a {
   color: white;
+  font-family:Exo2-ExtraBold;
 }
 
 .wallet-app:after {
@@ -1110,9 +1050,9 @@ footer h3 {
   top: 0px;
   width: 100vw;
   height: 100%;
-  background-image:url('assets/images/wallet-bg.jpg');
+  background-image: url('assets/images/wallet-bg.jpg');
   background-image: image-set(url('assets/images/wallet-bg.webp') type("image/webp"),
-      url('assets/images/wallet-bg.jpg') type("image/jpeg"));
+          url('assets/images/wallet-bg.jpg') type("image/jpeg"));
   position: absolute;
   z-index: 0;
   background-size: cover;
@@ -1124,7 +1064,9 @@ footer h3 {
   color: white;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
 }
-
+.wallet-app .footer-shape {
+  filter: invert(15%) sepia(50%) saturate(7024%) hue-rotate(260deg) brightness(80%) contrast(124%);
+}
 .wallet-app .section-heading-description {
   color: white;
   font-family: Roboto-Bold;
@@ -1133,11 +1075,9 @@ footer h3 {
 }
 
 .wallet-app .benefit-box {
-  background-image:url('assets/images/wallet-box-bg.png');
-  background-image: image-set(
-    url('assets/images/wallet-box-bg.webp') type('image/webp'),
-    url('assets/images/wallet-box-bg.png') type('image/png')
-  );
+  background-image: url('assets/images/wallet-box-bg.png');
+  background-image: image-set(url('assets/images/wallet-box-bg.webp') type('image/webp'),
+          url('assets/images/wallet-box-bg.png') type('image/png'));
   height: fit-content;
 }
 
@@ -1180,9 +1120,9 @@ footer h3 {
 }
 
 .wallet__testimonials {
-  background-image:url('assets/images/wallet-testimonial-bg.jpg');
+  background-image: url('assets/images/wallet-testimonial-bg.jpg');
   background-image: image-set(url('assets/images/wallet-testimonial-bg.webp') type('image/webp'),
-      url('assets/images/wallet-testimonial-bg.jpg') type('image/jpeg'));
+          url('assets/images/wallet-testimonial-bg.jpg') type('image/jpeg'));
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -1231,11 +1171,9 @@ footer h3 {
   content: '';
   width: 30%;
   height: 74px;
-  background-image:url('assets/images/wallet-stars.png');
-  background-image: image-set(
-    url('assets/images/wallet-stars.webp') type('image/webp'),
-    url('assets/images/wallet-stars.png') type('image/png')
-  );
+  background-image: url('assets/images/wallet-stars.png');
+  background-image: image-set(url('assets/images/wallet-stars.webp') type('image/webp'),
+          url('assets/images/wallet-stars.png') type('image/png'));
   background-size: contain;
   background-repeat: no-repeat;
   right: 50px;
@@ -1526,770 +1464,770 @@ header nav {
   background-color: #DC03FF;
 }
 
-
+.wallet-app footer  {
+  background-color: #4600d3;
+}
 @media screen and (max-width:1550px) {
   .wallet-app .benefit-box {
-    width: 30vw;
-    display: block;
-    margin: auto;
-    height: fit-content;
+      width: 30vw;
+      display: block;
+      margin: auto;
+      height: fit-content;
   }
 
   .register__section,
   .register-app .faq {
-    display: block;
-    height: auto;
+      display: block;
+      height: auto;
   }
 
   .register__faq-right-block {
-    width: 80vw;
-    height: 450px;
-    padding-inline: 0%;
+      width: 80vw;
+      height: 450px;
+      padding-inline: 0%;
   }
 
   .testimonials {
-    justify-content: center;
-    gap: 100px;
-    height: fit-content;
+      justify-content: center;
+      gap: 100px;
+      height: fit-content;
   }
 
   .news-heading {
-    text-align: center;
+      text-align: center;
   }
 
   .news-heading .section-heading {
-    margin-top: 100px;
+      margin-top: 100px;
   }
 
   .news-heading p {
-    width: 80%;
+      width: 80%;
   }
 
   .testimonial-box:nth-child(4),
   .testimonial-box:nth-child(2) {
-    margin-inline: 0;
+      margin-inline: 0;
   }
 
   .testimonial-box:first-of-type,
   .testimonial-box:last-of-type {
-    position: initial;
+      position: initial;
   }
 
   .incentive {
-    height: 250px;
+      height: 250px;
   }
 
   .incentive h1 {
-    max-width: 80%;
-    margin-inline: 10%;
-    font-size: clamp(1em, 1.7em, 2em);
+      max-width: 80%;
+      margin-inline: 10%;
+      font-size: clamp(1em, 1.7em, 2em);
   }
 }
 
 @media screen and (max-width:1550px) and (min-width:1024px) {
   .pricing__box {
-    width: 30vw;
+      width: 30vw;
   }
 
   .register-app .faq {
-    background-size: 150% 100%;
+      background-size: 150% 100%;
   }
 
   .register__left-block,
   .register__form {
-    margin: auto;
+      margin: auto;
   }
 
   .wallet__testimonials .section-heading {
-    font-size: 1.5em;
+      font-size: 1.5em;
   }
 
   .blockchain-user-record {
-    display: block;
+      display: block;
   }
 
   .wallet__testimonial-box {
-    padding: 20px;
+      padding: 20px;
   }
 
   .wallet__testimonial-box img {
-    width: 100px;
+      width: 100px;
   }
 
   .wallet__testimonial-box p {
-    font-size: 0.8em;
+      font-size: 0.8em;
   }
 
   .register__left-block {
-    width: 45vw;
+      width: 45vw;
   }
 
   .register__form {
-    width: 60vw;
+      width: 60vw;
   }
 
   .register__faq {
-    padding-block: 50px;
+      padding-block: 50px;
   }
 
   .register__faq-right-block {
-    height: 530px;
+      height: 530px;
   }
 
   ;
 
   .blockchain-user-record h2 {
-    height: 70px;
+      height: 70px;
   }
 
   .hero {
-    margin-top: 50px;
+      margin-top: 50px;
   }
 
   .testimonial-box {
-    width: 25vw;
+      width: 25vw;
   }
 
   .hero__left-block .hero__heading {
-    font-size: 2.3em;
+      font-size: 2.3em;
   }
 
   .hero__left-block .hero__description {
-    font-size: 1.8em;
+      font-size: 1.8em;
   }
 
   .hero__right-block img {
-    width: 30vw;
+      width: 30vw;
   }
 
   .hero__btn {
-    width: 300px;
+      width: 300px;
   }
 
   .benefit-box__image {
-    height: 200px;
+      height: 200px;
   }
 
   .benefit-box__heading {
-    height: 70px;
+      height: 70px;
   }
 
   .chart-block__description-heading {
-    font-size: 1.7em;
+      font-size: 1.7em;
   }
 
   .chart-block__description-description {
-    font-size: 1.5em;
+      font-size: 1.5em;
   }
 
   .cta-btn {
-    width: 30vw;
+      width: 30vw;
   }
 
   .chart-block__description {
-    width: 35vw;
+      width: 35vw;
   }
 
   .chart-block img {
-    width: 45vw;
+      width: 45vw;
   }
 
   .video-section video {
-    width: 80vw;
+      width: 80vw;
   }
 }
 
 @media screen and (max-width:1023px) {
   .chart-block::after {
-    height: 50%;
+      height: 50%;
   }
- 
+
   .register-app .section-heading-description {
-    font-size: 1.4em;
+      font-size: 1.4em;
   }
 
   .exchange-nav .cta-btn {
-    width: 40vw;
+      width: 40vw;
   }
 
   .register__section,
   .register-app .faq {
-    display: block;
-    height: auto;
+      display: block;
+      height: auto;
   }
 
   .register-app .faq {
-    background-size: 200% 100%;
-    background-position-x: right;
+      background-size: 200% 100%;
+      background-position-x: right;
   }
 
   .register__left-block {
-    width: auto;
+      width: auto;
   }
 
   .register__faq-right-block {
-    width: 80vw;
-    height: 450px;
+      width: 80vw;
+      height: 450px;
   }
 
   .faq__record h3 {
-    font-size: 1.5em;
+      font-size: 1.5em;
   }
 
   .register-app .faq {
-    padding-block: 50px;
+      padding-block: 50px;
   }
 
   .register__form {
-    margin: auto;
-    width: 70vw;
-    display: block;
+      margin: auto;
+      width: 70vw;
+      display: block;
   }
 
   .error-popup__reason h3 {
-    font-size: 2.3em;
+      font-size: 2.3em;
   }
 
   .blockchain-user-record {
-    display: block;
+      display: block;
   }
 
   .blockchain-user-record h2 {
-    height: 60px;
-    font-size: 1.2em;
+      height: 60px;
+      font-size: 1.2em;
   }
-
+  .faq-questions {
+    width: 60vw;
+  }
   .error-popup__reason p {
-    font-size: 1.5em;
+      font-size: 1.5em;
   }
 
   .pricing__box {
-    width: 50vw;
+      width: 50vw;
   }
 
   .wallet__testimonials {
-    background-size: cover;
-    background-position-x: 100%;
-    padding-block: 50px;
+      background-size: cover;
+      background-position-x: 100%;
+      padding-block: 50px;
   }
 
   .wallet-app .wallet__testimonials .section-heading {
-    width: 60vw;
-    padding-inline: 20%;
-    text-align: center;
-    margin-top: 0;
+      width: 60vw;
+      padding-inline: 20%;
+      text-align: center;
+      margin-top: 0;
   }
 
   .testimonial-shape {
-    display: none;
+      display: none;
   }
 
   .wallet__testimonial-box {
-    width: 60vw;
-    margin-inline: auto;
+      width: 60vw;
+      margin-inline: auto;
   }
 
   .section-heading-description {
-    font-size: 1.5em;
+      font-size: 1.5em;
   }
 
   .wallet-app .chart-block img {
-    width: 50vw;
+      width: 50vw;
   }
 
   .wallet-app .section-heading-description {
-    font-size: 1.5em;
-    width: 80%;
-    padding-inline: 10%;
+      font-size: 1.5em;
+      width: 80%;
+      padding-inline: 10%;
   }
 
   footer img:first-of-type:not(footer .companies-bar__logos img) {
-    margin: auto;
+      margin: auto;
   }
 
   .news__records {
-    gap: 10vw;
+      gap: 10vw;
   }
 
   .testimonial-box {
-    width: 30vw;
+      width: 30vw;
   }
 
   footer {
-    height: fit-content;
+      height: fit-content;
   }
 
   footer .companies-bar__logos {
-    justify-content: center;
-    column-gap: 50px;
-    row-gap: 30px;
+      justify-content: center;
+      column-gap: 50px;
+      row-gap: 30px;
   }
 
   .footer__links {
-    justify-content: center;
-    column-gap: 50px;
+      justify-content: center;
+      column-gap: 50px;
   }
 
   .news__records .news__box {
-    width: 35vw;
-    height: 450px;
+      width: 35vw;
+      height: 450px;
   }
 
   .news__records .news__box h2 {
-    font-size: 1.3em;
+      font-size: 1.3em;
   }
 
   .news__records .news__box p {
-    font-size: 1.2em;
+      font-size: 1.2em;
   }
 
   .testimonial-box img:last-of-type {
-    width: 80%;
-    margin-inline: 10%;
+      width: 80%;
+      margin-inline: 10%;
   }
 
   .video-section__section-heading {
-    margin-top: 210px;
-    margin-bottom: 100px;
+      margin-top: 210px;
+      margin-bottom: 100px;
   }
 
   .video-section__section-heading .section-heading {
-    margin-block: 0;
+      margin-block: 0;
   }
 
   .video-section__block video {
-    height: 400px;
+      height: 400px;
   }
 
   .video-section .cta-btn {
-    width: 70vw;
+      width: 70vw;
   }
 
   .video-section video {
-    width: 80vw;
+      width: 80vw;
   }
   .testimonial-box picture:first-of-type img {
-    width: 60%;
-    max-height: 150px;
+      width: 60%;
+      max-height: 150px;
   }
   .hero__left-block,
   .hero__right-block {
-    width: 80vw;
-    max-width: 80vw;
+      width: 80vw;
+      max-width: 80vw;
   }
 
   .chart-block-section {
-    gap: 100px;
+      gap: 100px;
   }
 
   .chart-block,
   .chart-block:last-of-type {
-    flex-direction: column;
+      flex-direction: column;
   }
 
   .chart-block__description {
-    margin-top: 50px;
+      margin-top: 50px;
   }
 
   .chart-block__description,
   .chart-block img {
-    width: 80vw;
+      width: 80vw;
   }
 
   .cta-btn {
-    width: 40vw;
-    height: 70px;
-    font-size: 1em;
+      width: 40vw;
+      height: 70px;
+      font-size: 1em;
   }
 
   .hero__right-block img {
-    width: 60vw;
-    display: block;
-    margin: auto;
+      width: 60vw;
+      display: block;
+      margin: auto;
   }
 
   .benefit-box__image {
-    height: 170px;
+      height: 170px;
   }
 
   .benefits {
-    justify-content: center;
-    column-gap: 60px;
+      justify-content: center;
+      column-gap: 60px;
   }
 
   .benefit-box {
-    width: 30vw;
-    height: 350px;
+      width: 30vw;
+      height: 350px;
   }
 
   .benefit-box__heading {
-    font-size: 1.4em;
+      font-size: 1.4em;
   }
 
   .benefit-box__description {
-    font-size: 1em;
+      font-size: 1em;
   }
 }
 
 @media screen and (max-width:1024px) and (min-width:550px) {
   .hero__btn {
-    width: 40vw;
+      width: 40vw;
   }
 
   .incentive {
-    background-size: 100% 100%;
+      background-size: 100% 100%;
   }
 
   .section-heading {
-    margin-block: 100px;
-    font-size: 2em;
+      margin-block: 100px;
+      font-size: 2em;
   }
 
   .chart-block__description-heading {
-    font-size: 2em;
+      font-size: 2em;
   }
 
   .chart-block__description-description {
-    font-size: 1.5em;
+      font-size: 1.5em;
   }
 }
 
 @media screen and (max-width:700px) {
   .chart-block:after {
-    height: 50%;
+      height: 50%;
   }
-
   .news-heading {
-    margin-bottom: 50px;
-  }
-
-  .pricing-app .faq,
-  .pricing-app .footer-shape {
-    background-image: none;
-    background-color: #E9E7E7;
+      margin-bottom: 50px;
   }
 
   header img {
-    width: 70vw;
+      width: 70vw;
   }
 
   header a {
-    width: 80%;
+      width: 80%;
   }
-
+  
   header {
-    margin-inline: 5vw;
+      margin-inline: 5vw;
   }
 
   .register-app .incentive {
-    font-size: 1em;
-    justify-content: center;
-    height: 150px;
+      font-size: 1em;
+      justify-content: center;
+      height: 150px;
   }
 
   .exchange-nav {
-    gap: 100px;
-    justify-content: center;
+      gap: 100px;
+      justify-content: center;
   }
 
   .register-app .faq {
-    background-attachment: scroll;
-    background-position-x: 90%;
-    background-size: 300% 150%;
-    background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position-x: 90%;
+      background-size: 300% 150%;
+      background-repeat: no-repeat;
   }
 
   .register-app .section-heading-description {
-    font-size: 1.2em;
+      font-size: 1.2em;
   }
 
   .register__form {
-    height: fit-content;
-    padding-block: 40px;
+      height: fit-content;
+      padding-block: 40px;
   }
 
   .register__left-block h1 {
-    font-size: 1.9em;
+      font-size: 1.9em;
   }
 
   .register__left-block p {
-    font-size: 1.4em;
+      font-size: 1.4em;
   }
 
   .blockchain-user-record {
-    width: 35vw;
+      width: 35vw;
   }
 
   .error-popup {
-    width: 80vw;
+      width: 80vw;
   }
 
   .swap-widgets {
-    height: 500px;
-    overflow: hidden;
-    row-gap: 50px;
-    width: 100vw;
-    margin-top: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    display: grid;
+      height: 500px;
+      overflow: hidden;
+      row-gap: 50px;
+      width: 100vw;
+      margin-top: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      display: grid;
   }
 
   .exchange-app .move-arrows:not(.news .move-arrows) {
-    display: flex;
+      display: flex;
   }
 
   .swap-widget__box .locked-box {
-    max-height: 400px;
+      max-height: 400px;
   }
 
   .swap-widget__box {
-    height: 400px;
-    margin-block: 50px;
-    scroll-margin-block: 50px;
+      height: 400px;
+      margin-block: 50px;
+      scroll-margin-block: 50px;
   }
 
   .exchange-nav .cta-btn {
-    width: 50vw;
+      width: 50vw;
   }
 
   .pricing__box .subscription-level {
-    height: 100px;
+      height: 100px;
   }
 
   .pricing__box-abilities-record img {
-    height: 30px;
+      height: 30px;
   }
 
   .pricing__subscription-type {
-    font-size: 1.5em;
+      font-size: 1.5em;
   }
 
   .pricing__box {
-    height: 550px;
-    width: 50vw;
+      height: 550px;
+      width: 50vw;
   }
 
   .pricing__box .custom-btn {
-    width: 50%;
-    height: 10px;
-    margin-top: 50px;
+      width: 50%;
+      height: 10px;
+      margin-top: 50px;
   }
 
   footer h3 {
-    font-size: 1em;
-    text-align: center;
-    margin-left: 0;
+      font-size: 1em;
+      text-align: center;
+      margin-left: 0;
   }
 
   .pricing__box-abilities-record {
-    display: block;
-    width: 100%;
-    margin: 0;
-    text-align: center;
-    margin-bottom: 30px;
+      display: block;
+      width: 100%;
+      margin: 0;
+      text-align: center;
+      margin-bottom: 30px;
   }
 
   .pricing__box-abilities-record p {
-    width: 100%;
+      width: 100%;
   }
 
   header nav {
-    position: fixed;
-    left: 0;
-    align-items: center;
-    gap: 0;
-    width: 40vw;
-    flex-wrap: wrap;
-    z-index: 999;
-    background-color: black;
-    height: 100vh;
-    top: 0;
-    justify-content: center;
+      position: fixed;
+      left: 0;
+      align-items: center;
+      gap: 0;
+      width: 40vw;
+      flex-wrap: wrap;
+      z-index: 999;
+      background-color: black;
+      height: 100vh;
+      top: 0;
+      justify-content: center;
   }
 
   header nav a {
-    width: 80%;
-    height: 25px;
-    font-family: Exo2-ExtraBold;
-    color: white;
+      width: 80%;
+      height: 25px;
+      font-family: Exo2-ExtraBold;
+      color: white;
   }
 
   .news__records {
-    overflow-y: hidden;
-    flex-wrap: wrap;
-    height: 460px;
+      overflow-y: hidden;
+      flex-wrap: wrap;
+      height: 460px;
 
   }
 
   .nav-btn {
-    display: block;
+      display: block;
 
   }
 
   .nav-btn hr {
-    height: 3px;
-    width: 30px;
+      height: 3px;
+      width: 30px;
   }
 
   .wallet-header .nav-btn hr {
-    background-color: white;
+      background-color: white;
 
   }
 
   .wallet-app .benefit-box {
-    width: 60vw;
-    display: block;
-    margin: auto;
-    height: 500px;
+      width: 60vw;
+      display: block;
+      margin: auto;
+      height: 500px;
   }
 
   .wallet-app .benefit-box h1 {
-    height: 50px;
+      height: 50px;
   }
 
   .news__records .news__box {
-    width: 60vw;
-    display: block;
-    margin: auto;
+      width: 60vw;
+      display: block;
+      margin: auto;
   }
 
   .news__records .news__box {
-    height: 400px;
-    margin-block: 30px;
-    scroll-margin-block: 30px;
+      height: 400px;
+      margin-block: 30px;
+      scroll-margin-block: 30px;
   }
 
   .news-heading p {
-    font-size: 1.4em;
+      font-size: 1.4em;
   }
 
   .news__box h2 {
-    font-size: 1.5em;
+      font-size: 1.5em;
   }
 
   .news .news__box p {
-    font-size: 1em;
+      font-size: 1em;
   }
 
   .news__records .news__box:last-of-type {
-    display: block;
+      display: block;
   }
 
   .section-heading {
-    margin-block: 100px;
+      margin-block: 100px;
   }
 
   .chart-block-section {
-    margin-top: 0;
+      margin-top: 0;
   }
 
   .hero__left-block .hero__heading {
-    font-size: 2em;
+      font-size: 2em;
   }
 
   .hero__left-block .hero__description {
-    font-size: 1.5em;
+      font-size: 1.5em;
   }
 
   .hero__right-block img {
-    width: 80vw;
+      width: 80vw;
   }
 
   .hero__btn {
-    width: 70vw;
+      width: 70vw;
   }
 
   .footer__links-column {
-    font-size: 1em;
+      font-size: 1em;
   }
 
   .hero {
-    row-gap: 30px;
+      row-gap: 30px;
   }
 
   .section-heading {
-    font-size: 1.8em;
+      font-size: 1.8em;
   }
 
   .benefit-box {
-    width: 80vw;
-    display: block;
-    margin: auto;
+      width: 80vw;
+      display: block;
+      margin: auto;
   }
 
   .benefit-box__description {
-    width: 90%;
-    padding-inline: 5%;
-    font-size: 1.2em;
+      width: 90%;
+      padding-inline: 5%;
+      font-size: 1.2em;
   }
 
   .chart-block__description-heading {
-    font-size: 1.2em;
+      font-size: 1.2em;
   }
 
   .chart-block__description-description {
-    font-size: 1em;
+      font-size: 1em;
+  }
+  .faq__record p {
+    width: 90%;
   }
 }
 
 @media screen and (max-width:350px) {
   .benefit-box__description {
-    font-size: 1em;
+      font-size: 1em;
   }
 
   .cta-btn {
-    width: 80vw;
+      width: 80vw;
   }
 
   .section-heading {
-    font-size: 1.3em;
+      font-size: 1.3em;
   }
 
   footer h3 {
-    max-width: 80%;
-    padding-inline: 10%;
+      max-width: 80%;
+      padding-inline: 10%;
   }
 
   .wallet-app .benefit-box {
-    height: 450px;
-    width: 80vw;
+      height: 450px;
+      width: 80vw;
   }
 
   .register__faq-right-block {
-    height: 210px !important;
+      height: 210px !important;
   }
 }
 
 @media screen and (max-width:550px) {
   .video-section .section-heading {
-    margin-bottom: 100px;
-    margin-top: 150px;
+      margin-bottom: 100px;
+      margin-top: 150px;
   }
 
   .register-app .faq {
-    background-image: none;
-    background-color: #7000ff;
+      background-image: none;
+      background-color: #7000ff;
   }
 
   .register-app .incentive {
-    background-size: 300% 100%;
+      background-size: 300% 100%;
   }
 
   .register__section {
-    padding-inline: 5%;
+      padding-inline: 5%;
   }
 
   .register__form {
-    height: 620px;
-    padding-bottom: 100px;
-    width: 80vw;
-    margin: auto;
+      height: 620px;
+      padding-bottom: 100px;
+      width: 80vw;
+      margin: auto;
 
   }
 
   .faq__left-block .section-heading {
-    font-size: 1.5em;
+      font-size: 1.5em;
   }
 
   .faq__left-block,
@@ -2300,225 +2238,224 @@ header nav {
   .wallet-app .section-heading-description,
   .exchange-app .section-heading,
   .news-heading {
-    text-align: left;
+      text-align: left;
   }
 
   .register__form form {
-    height: 530px;
+      height: 530px;
   }
 
   .register__form form input:not(.register__form form input[type="checkbox"]) {
-    width: 80%;
-    display: block;
-    margin: auto;
-    font-size: 1em;
+      width: 80%;
+      display: block;
+      margin: auto;
+      font-size: 1em;
   }
 
   .register__form form label {
-    font-size: 0.7em;
+      font-size: 0.7em;
   }
 
   .exchange-nav {
-    display: block;
-    padding-inline: 0;
+      display: block;
+      padding-inline: 0;
   }
 
   .register__faq .section-heading {
-    margin-top: 30px;
+      margin-top: 30px;
   }
 
   .register__faq-right-block {
-    width: 80;
-    height: 220px;
+      width: 80;
+      height: 220px;
   }
 
   .register-app .faq__record {
-    width: 80%;
-    font-size: 0.7em;
-    text-shadow: 0px 1px 2px black;
-    background-position-x: right;
+      width: 80%;
+      font-size: 0.7em;
+      text-shadow: 0px 1px 2px black;
+      background-position-x: right;
   }
 
   .register-app .faq__record h3 {
-    font-size: 1em;
+      font-size: 1em;
   }
 
   .section-heading-description {
-    width: 90%;
-    padding-inline: 5%;
+      width: 90%;
+      padding-inline: 5%;
   }
 
   .blockchain-user-record {
-    display: block;
-    margin: auto;
-    margin-bottom: 50px;
-    width: 80vw;
+      display: block;
+      margin: auto;
+      margin-bottom: 50px;
+      width: 80vw;
   }
 
   .blockchain-user-record h2 {
-    height: 30px;
+      height: 30px;
   }
 
   .error-popup img {
-    max-height: 100px;
+      max-height: 100px;
   }
 
   .error-popup__reason h3 {
-    font-size: 1.4em;
+      font-size: 1.4em;
   }
 
   .error-popup__reason p {
-    font-size: 1em;
+      font-size: 1em;
   }
 
   .error-popup {
-    margin-top:50px;
-    width: 80vw;
-    height: 230px;
+      margin-top: 50px;
+      width: 80vw;
+      height: 230px;
   }
 
   .pricing__box {
-    margin-block: 50px;
-    padding-block: 50px;
-    width: 60vw;
-    height: 500px;
-    scroll-margin-block: 30px;
+      margin-block: 50px;
+      padding-block: 50px;
+      width: 60vw;
+      height: 500px;
+      scroll-margin-block: 30px;
   }
 
   .pricing__records {
-    height: 670px;
-    margin-inline: 5vw;
-    overflow-y: hidden;
+      height: 670px;
+      margin-inline: 5vw;
+      overflow-y: hidden;
   }
 
   .faq__record hr {
-    width: 80vw;
+      width: 80vw;
   }
 
-  .pricing-app .faq__left-block .section-heading,
-  .pricing-app .faq__record h3,
-  .pricing-app .faq__record p {
-    text-align: left;
+  .pricing-app .faq__left-block .section-heading
+  {
+      text-align: left;
   }
 
   .pricing-app .faq__left-block .section-heading {
-    padding-inline: 0;
+      padding-inline: 0;
   }
 
   .faq__record h3 {
-    font-size: 1.3em;
+      font-size: 1.3em;
   }
 
   .faq__record p {
-    font-size: 1.2em;
+      font-size: 1.2em;
   }
 
   .wallet-app .chart-block img {
-    width: 70vw;
+      width: 70vw;
   }
 
   .testimonials {
-    width: 75vw;
-    padding-inline: 12.5%;
-    height: 480px;
-    overflow-y: hidden;
+      width: 75vw;
+      padding-inline: 12.5%;
+      height: 480px;
+      overflow-y: hidden;
   }
 
   .section-heading-description {
-    font-size: 1em;
+      font-size: 1em;
   }
 
   .wallet__testimonials {
-    background-position-x: left;
-    margin-top: 150px;
+      background-position-x: left;
+      margin-top: 150px;
   }
 
   .wallet__testimonial-box {
-    flex-direction: column;
+      flex-direction: column;
 
   }
 
   .wallet-app .chart-block:first-of-type {
-    margin-top: 100px;
+      margin-top: 100px;
   }
 
   .wallet__testimonial-box:after {
-    right: 50%;
-    transform: translateX(50%);
-    width: 50%;
+      right: 50%;
+      transform: translateX(50%);
+      width: 50%;
   }
 
   footer .companies-bar__logos img {
-    width: 30vw;
-    max-width: 50vw;
+      width: 30vw;
+      max-width: 50vw;
   }
 
   .move-arrows:not(.news .move-arrows) {
-    display: flex;
+      display: flex;
   }
 
   .wallet-app .benefit-box {
-    height: 450px;
+      height: 450px;
   }
 
   .wallet-app .benefit-box p {
-    font-size: 1.2em;
+      font-size: 1.2em;
   }
 
   .incentive {
-    background-size: 100% 100%;
+      background-size: 100% 100%;
   }
 
   .companies-bar__stars img {
-    width: 100px;
+      width: 100px;
   }
 
   .testimonial-box {
-    width: 100%;
-    box-shadow: 0px 0px 5px black;
-    scroll-margin-block: 20px;
-    margin-block: 20px;
+      width: 100%;
+      box-shadow: 0px 0px 5px black;
+      scroll-margin-block: 20px;
+      margin-block: 20px;
   }
- 
+
   .testimonial-box picture:last-of-type img {
       width: 80%;
   }
   .testimonial-box picture:first-of-type img {
-    width: 40%;
+      width: 40%;
   }
   .news__records .news__box {
-    box-shadow: 0px 2px 6px black;
-    width: 75vw;
+      box-shadow: 0px 2px 6px black;
+      width: 75vw;
   }
 
   .move-arrows img {
-    width: 20vw;
+      width: 20vw;
   }
-  
+
   .incentive h1 {
-    font-size: 1.2em;
+      font-size: 1.2em;
   }
 
   .video-section__block::after {
-    top: -60px;
+      top: -60px;
   }
 
   .video-section__block video {
-    height: 250px;
+      height: 250px;
   }
 
   .custom-play-btn {
-    width: 100px;
-    height: 100px;
+      width: 100px;
+      height: 100px;
   }
 
   .companies-bar__logos {
-    height: fit-content;
+      height: fit-content;
   }
 
   .companies-bar__logos img {
-    width: 35vw;
-    max-width: 35vw;
+      width: 35vw;
+      max-width: 35vw;
   }
 
 }

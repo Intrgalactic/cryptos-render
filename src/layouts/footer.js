@@ -1,8 +1,10 @@
 import footerShape from 'assets/images/footer-shape.png';
+import pricingFooterShape from 'assets/images/pricing-footer-shape.png';
 import logo from 'assets/images/logo.png';
 import webpLogo from 'assets/images/logo.webp';
 import { Picture } from 'components/picture';
 import { Suspense, lazy } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const FooterLinks = lazy(() => import("components/footer-links").then(module => {
     return { default: module.FooterLinks }
@@ -13,9 +15,12 @@ const CompaniesLogos = lazy(() => import("components/companies-logos").then(modu
 }))
 
 export default function Footer() {
+    const location = useLocation();
+    const path = location.pathname;
+    console.log(path === "/pricing");
     return (
         <>
-            <img src={footerShape} alt="footer shape" className="footer-shape" width="100%" height="100%"></img>
+            <img src={path === "/pricing" ? pricingFooterShape : footerShape} alt="footer shape" className="footer-shape" width="100%" height="100%"></img>
             <footer>
                 <Picture images={[logo, webpLogo]}>
                     <img src={logo} alt="cryptos logo" />

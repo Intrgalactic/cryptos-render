@@ -18,7 +18,6 @@ export default function PricingSection() {
     const pricingRef = useRef();
     return (
         <>
-            <SectionHeading heading={["don't hestitate while you can earn"]} />
             <section className="pricing">
                 <div className="pricing__records" ref={pricingRef}>
                     <Suspense fallback={<p>Loading...</p>}>
