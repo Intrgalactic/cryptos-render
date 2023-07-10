@@ -28,7 +28,7 @@ html {
 
 section:not(.testimonials, .video-section, .companies-bar, .incentive, .news, .faq, .wallet__testimonials, .pricing),
 header {
-  padding-inline: 10vw;
+  margin-inline: 10vw;
 }
 
 .hero__heading,
