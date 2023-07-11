@@ -668,7 +668,7 @@ video {
   background-image: url('assets/images/webinar-bg.jpg');
   background-image: image-set(url('assets/images/webinar-bg.webp') type('image/webp'),
       url('assets/images/webinar-bg.jpg') type('image/jpeg'));
-  background-size:100%;
+  background-size: 100%;
   height: 300px;
   align-items: center;
   margin-top: 150px;
@@ -850,8 +850,10 @@ footer h3 {
 .pricing {
   margin-top: 50px;
   background-image: url('assets/images/pricing-bg.jpg');
-  background-image: image-set(url('assets/images/pricing-bg.webp') type('image/webp'),
-      url('assets/images/pricing-bg.jpg'));
+  background-image: image-set(
+    url('assets/images/pricing-bg.webp') type('image/webp'),
+    url('assets/images/pricing-bg.jpg') type('image/jpeg')
+  );
   background-size: cover;
   padding-block: 100px;
 }
@@ -992,7 +994,7 @@ footer h3 {
   cursor: pointer;
 }
 
-.faq__record h3 {
+.faq__record h4 {
   font-family: Exo2-ExtraBold;
   font-size: 1.5em;
 }
@@ -1038,8 +1040,8 @@ footer h3 {
 .wallet-header {
   background-image: url('assets/images/header-bg.jpg');
   background-image: image-set(url('assets/images/header-bg.webp') type("image/webp"),
-      url('assets/images/header-bg.jpg'));
-  background-size:100%;
+      url('assets/images/header-bg.jpg') type('image/jpeg'));
+  background-size: 100%;
   margin-inline: 0;
   width: 100vw;
   backdrop-filter: blur(5px);
@@ -1350,7 +1352,8 @@ header nav {
 
 .register-app .faq__record {
   text-shadow: 0px 4px 4px black;
-  background-image: url('assets/images/faq-record-bg.jpg');
+  background-image: image-set(url('assets/images/faq-record-bg.webp') type('image/webp'),
+      url('assets/images/faq-record-bg.jpg') type('image/jpeg'));
   background-size: cover;
   border-radius: 50px;
 
@@ -1364,10 +1367,12 @@ header nav {
   transition-duration: 300ms;
   width: 90%;
 }
+
 .register-app .faq__record p {
   width: 90%;
-  font-size:1.2em;
+  font-size: 1.2em;
 }
+
 .register__faq-right-block::-webkit-scrollbar {
   display: none;
   /* Safari and Chrome */
@@ -1393,7 +1398,8 @@ header nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-image: url('assets/images/register-section-bg.jpg');
+  background-image: image-set(url('assets/images/register-section-bg.webp') type('image/webp'),
+      url('assets/images/register-section-bg.jpg') type('image/jpeg'));
   background-size: cover;
   padding-block: 50px;
   padding-inline: 5%;
@@ -1401,7 +1407,8 @@ header nav {
 }
 
 .register__incentive {
-  background-image: url('assets/images/register-incentive-bg.jpg');
+  background-image: image-set(url('assets/images/register-incentive-bg.webp') type('image/webp'),
+      url('assets/images/register-incentive-bg.jpg') type('image/jpeg'));
   background-size: cover;
   justify-content: flex-end;
   padding-inline: 10%;
@@ -1493,10 +1500,12 @@ header nav {
     margin: auto;
     height: fit-content;
   }
+
   footer picture:first-of-type img {
     width: 50%;
     height: auto;
   }
+
   .register__section,
   .register-app .faq {
     display: block;
@@ -1552,18 +1561,23 @@ header nav {
   .pricing__box {
     width: 30vw;
   }
-  .testimonial-box picture:first-of-type img  {
+
+  .testimonial-box picture:first-of-type img {
     width: 40%;
   }
+
   .register-app .faq {
     background-size: 150% 100%;
   }
+
   .news__box img {
     height: 40%;
   }
+
   .news__records .news__box p {
-    font-size:1.3em;
+    font-size: 1.3em;
   }
+
   .register__left-block,
   .register__form {
     margin: auto;
@@ -1576,10 +1590,12 @@ header nav {
   .blockchain-user-record {
     display: block;
   }
+
   .wallet-app .benefit-box img {
     height: auto;
     width: 50%;
   }
+
   .wallet__testimonial-box {
     padding: 20px;
   }
@@ -1669,13 +1685,15 @@ header nav {
   .chart-block:after {
     display: none;
   }
- 
+
   .register-app .section-heading-description {
     font-size: 1.4em;
   }
+
   .news__box img {
     height: 35%;
   }
+
   .exchange-nav .cta-btn {
     width: 40vw;
   }
@@ -1700,7 +1718,7 @@ header nav {
     height: 450px;
   }
 
-  .faq__record h3 {
+  .faq__record h4 {
     font-size: 1.5em;
   }
 
@@ -1786,9 +1804,11 @@ header nav {
   .testimonial-box {
     width: 30vw;
   }
+
   .testimonial-box picture:last-of-type img {
     height: auto;
   }
+
   footer {
     height: fit-content;
   }
@@ -1823,7 +1843,7 @@ header nav {
   }
 
   .video-section__section-heading {
-    margin-block:100px;
+    margin-block: 100px;
   }
 
   .video-section__section-heading .section-heading {
@@ -1933,38 +1953,48 @@ header nav {
   .news-heading {
     margin-bottom: 50px;
   }
+
   .companies-bar__stars img {
     width: 100px;
     height: auto;
   }
+
   .pricing__box-abilities-record img {
     width: 40px;
   }
+
   footer picture:first-of-type img {
     width: 70%;
   }
+
   header img {
     width: 70vw;
   }
+
   .news__box img {
     height: 50%;
   }
+
   .testimonial-box picture:first-of-type img {
     width: 80%;
   }
+
   .testimonial-box p {
-    font-size:0.9em;
+    font-size: 0.9em;
   }
+
   header a {
     width: 80%;
   }
-  
+
   header {
     margin-inline: 5vw;
   }
+
   .benefit-box__image {
     width: auto;
   }
+
   .register-app .incentive {
     font-size: 1em;
     justify-content: center;
@@ -2230,6 +2260,7 @@ header nav {
   .cta-btn {
     width: 80vw;
   }
+
   .section-heading {
     font-size: 1.3em;
   }
@@ -2254,9 +2285,11 @@ header nav {
     margin-bottom: 100px;
     margin-top: 150px;
   }
+
   footer picture:first-of-type img {
     height: auto;
   }
+
   .register-app .faq {
     background-image: none;
     background-color: #7000ff;
@@ -2316,6 +2349,7 @@ header nav {
   .register__faq .section-heading {
     margin-top: 30px;
   }
+
   .register-app .faq__record {
     width: 80%;
     font-size: 0.7em;
@@ -2323,7 +2357,7 @@ header nav {
     background-position-x: right;
   }
 
-  .register-app .faq__record h3 {
+  .register-app .faq__record h4 {
     font-size: 1em;
   }
 
@@ -2359,9 +2393,11 @@ header nav {
     margin-top: 50px;
     width: 80vw;
   }
+
   .error-popup img {
     width: auto;
   }
+
   .pricing__box {
     margin-block: 50px;
     padding-block: 50px;
@@ -2388,7 +2424,7 @@ header nav {
     padding-inline: 0;
   }
 
-  .faq__record h3 {
+  .faq__record h4 {
     font-size: 1.3em;
   }
 
@@ -2472,9 +2508,11 @@ header nav {
     width: 75vw;
     height: 400px;
   }
+
   .news__records .news__box img {
     height: 40%;
   }
+
   .move-arrows img {
     width: 20vw;
   }
@@ -2504,8 +2542,9 @@ header nav {
     width: 35vw;
     max-width: 35vw;
   }
+
   .pricing__box .subscription-level {
-    width:37%;
+    width: 37%;
     max-height: 100px;
   }
 }

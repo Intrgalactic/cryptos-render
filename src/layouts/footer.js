@@ -1,5 +1,7 @@
 import footerShape from 'assets/images/footer-shape.png';
 import pricingFooterShape from 'assets/images/pricing-footer-shape.png';
+import webpFooterShape from 'assets/images/footer-shape.webp';
+import webpPricingFooterShape from 'assets/images/pricing-footer-shape.webp';
 import logo from 'assets/images/logo.png';
 import webpLogo from 'assets/images/logo.webp';
 import { Picture } from 'components/picture';
@@ -20,10 +22,13 @@ export default function Footer() {
     console.log(path === "/pricing");
     return (
         <>
-            <img src={path === "/pricing" ? pricingFooterShape : footerShape} alt="footer shape" className="footer-shape" width="100%" height="100%"></img>
+            <Picture images={path === "pricing" ? [pricingFooterShape, webpPricingFooterShape] : [footerShape, webpFooterShape]}>
+                <img src={path === "/pricing" ? pricingFooterShape : footerShape} alt="footer shape" className="footer-shape" width="100%" height="100%" loading='lazy'></img>
+            </Picture>
+
             <footer>
                 <Picture images={[logo, webpLogo]}>
-                    <img src={logo} alt="cryptos logo" width="30%" height="170px"/>
+                    <img src={logo} alt="cryptos logo" width="30%" height="170px" />
                 </Picture>
                 <div className="footer__links">
                     <Suspense fallback={<p>Loading...</p>}>
