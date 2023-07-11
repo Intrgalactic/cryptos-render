@@ -22,7 +22,7 @@ export default function Footer() {
     console.log(path === "/pricing");
     return (
         <>
-            <Picture images={path === "pricing" ? [pricingFooterShape, webpPricingFooterShape] : [footerShape, webpFooterShape]}>
+            <Picture images={path === "/pricing" ? [pricingFooterShape, webpPricingFooterShape] : [footerShape, webpFooterShape]}>
                 <img src={path === "/pricing" ? pricingFooterShape : footerShape} alt="footer shape" className="footer-shape" width="100%" height="100%" loading='lazy'></img>
             </Picture>
 
