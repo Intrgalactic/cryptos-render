@@ -16,7 +16,7 @@ export default function Hero() {
             </SectionLeftBlock>
             <SectionRightBlock class="hero__right-block">
                 <Picture images={[hero, webpHero]}>
-                    <img src={hero} alt="Enterpreneur Woman" />
+                    <img src={hero} alt="Enterpreneur Woman" width="100%" height="100%"/>
                 </Picture>
             </SectionRightBlock>
         </motion.section>

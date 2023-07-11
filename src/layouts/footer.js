@@ -23,7 +23,7 @@ export default function Footer() {
             <img src={path === "/pricing" ? pricingFooterShape : footerShape} alt="footer shape" className="footer-shape" width="100%" height="100%"></img>
             <footer>
                 <Picture images={[logo, webpLogo]}>
-                    <img src={logo} alt="cryptos logo" />
+                    <img src={logo} alt="cryptos logo"/>
                 </Picture>
                 <div className="footer__links">
                     <Suspense fallback={<p>Loading...</p>}>
