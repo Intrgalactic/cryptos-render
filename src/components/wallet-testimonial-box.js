@@ -7,7 +7,7 @@ export function WalletTestimonialBox({ userName, userDescription }) {
     return (
         <div className="wallet__testimonial-box">
             <Picture images={[user, webpUser]}>
-                <img src={webpUser} alt="user face" />
+                <img src={webpUser} alt="user face" width="100px" height="100px"/>
             </Picture>
             <WalletTestimonialUserData userName={userName} userDescription={userDescription} />
         </div>

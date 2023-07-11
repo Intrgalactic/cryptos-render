@@ -668,6 +668,7 @@ video {
   background-image: url('assets/images/webinar-bg.jpg');
   background-image: image-set(url('assets/images/webinar-bg.webp') type('image/webp'),
       url('assets/images/webinar-bg.jpg') type('image/jpeg'));
+  background-size:100%;
   height: 300px;
   align-items: center;
   margin-top: 150px;
@@ -1038,6 +1039,7 @@ footer h3 {
   background-image: url('assets/images/header-bg.jpg');
   background-image: image-set(url('assets/images/header-bg.webp') type("image/webp"),
       url('assets/images/header-bg.jpg'));
+  background-size:100%;
   margin-inline: 0;
   width: 100vw;
   backdrop-filter: blur(5px);
@@ -1491,7 +1493,10 @@ header nav {
     margin: auto;
     height: fit-content;
   }
-
+  footer picture:first-of-type img {
+    width: 50%;
+    height: auto;
+  }
   .register__section,
   .register-app .faq {
     display: block;
@@ -1547,11 +1552,18 @@ header nav {
   .pricing__box {
     width: 30vw;
   }
-
+  .testimonial-box picture:first-of-type img  {
+    width: 40%;
+  }
   .register-app .faq {
     background-size: 150% 100%;
   }
-
+  .news__box img {
+    height: 40%;
+  }
+  .news__records .news__box p {
+    font-size:1.3em;
+  }
   .register__left-block,
   .register__form {
     margin: auto;
@@ -1564,7 +1576,10 @@ header nav {
   .blockchain-user-record {
     display: block;
   }
-
+  .wallet-app .benefit-box img {
+    height: auto;
+    width: 50%;
+  }
   .wallet__testimonial-box {
     padding: 20px;
   }
@@ -1654,11 +1669,13 @@ header nav {
   .chart-block:after {
     display: none;
   }
-
+ 
   .register-app .section-heading-description {
     font-size: 1.4em;
   }
-
+  .news__box img {
+    height: 35%;
+  }
   .exchange-nav .cta-btn {
     width: 40vw;
   }
@@ -1769,7 +1786,9 @@ header nav {
   .testimonial-box {
     width: 30vw;
   }
-
+  .testimonial-box picture:last-of-type img {
+    height: auto;
+  }
   footer {
     height: fit-content;
   }
@@ -1795,7 +1814,7 @@ header nav {
   }
 
   .news__records .news__box p {
-    font-size: 1.2em;
+    font-size: 1em;
   }
 
   .testimonial-box img:last-of-type {
@@ -1824,8 +1843,8 @@ header nav {
   }
 
   .testimonial-box picture:first-of-type img {
-    width: 60%;
-    max-height: 150px;
+    width: 50%;
+    height: 150px;
   }
 
   .hero__left-block,
@@ -1914,19 +1933,38 @@ header nav {
   .news-heading {
     margin-bottom: 50px;
   }
-
+  .companies-bar__stars img {
+    width: 100px;
+    height: auto;
+  }
+  .pricing__box-abilities-record img {
+    width: 40px;
+  }
+  footer picture:first-of-type img {
+    width: 70%;
+  }
   header img {
     width: 70vw;
   }
-
+  .news__box img {
+    height: 50%;
+  }
+  .testimonial-box picture:first-of-type img {
+    width: 80%;
+  }
+  .testimonial-box p {
+    font-size:0.9em;
+  }
   header a {
     width: 80%;
   }
-
+  
   header {
     margin-inline: 5vw;
   }
-
+  .benefit-box__image {
+    width: auto;
+  }
   .register-app .incentive {
     font-size: 1em;
     justify-content: center;
@@ -2000,7 +2038,8 @@ header nav {
   }
 
   .pricing__box .subscription-level {
-    height: 100px;
+    height: auto;
+    width: 30%;
   }
 
   .pricing__box-abilities-record img {
@@ -2101,7 +2140,7 @@ header nav {
   }
 
   .news__records .news__box {
-    height: 400px;
+    height: 350px;
     margin-block: 30px;
     scroll-margin-block: 30px;
   }
@@ -2191,7 +2230,6 @@ header nav {
   .cta-btn {
     width: 80vw;
   }
-
   .section-heading {
     font-size: 1.3em;
   }
@@ -2216,7 +2254,9 @@ header nav {
     margin-bottom: 100px;
     margin-top: 150px;
   }
-
+  footer picture:first-of-type img {
+    height: auto;
+  }
   .register-app .faq {
     background-image: none;
     background-color: #7000ff;
@@ -2318,9 +2358,10 @@ header nav {
   .error-popup {
     margin-top: 50px;
     width: 80vw;
-    height: 230px;
   }
-
+  .error-popup img {
+    width: auto;
+  }
   .pricing__box {
     margin-block: 50px;
     padding-block: 50px;
@@ -2411,10 +2452,6 @@ header nav {
     background-size: 100% 100%;
   }
 
-  .companies-bar__stars img {
-    width: 100px;
-  }
-
   .testimonial-box {
     width: 100%;
     box-shadow: 0px 0px 5px black;
@@ -2433,8 +2470,11 @@ header nav {
   .news__records .news__box {
     box-shadow: 0px 2px 6px black;
     width: 75vw;
+    height: 400px;
   }
-
+  .news__records .news__box img {
+    height: 40%;
+  }
   .move-arrows img {
     width: 20vw;
   }
@@ -2464,5 +2504,8 @@ header nav {
     width: 35vw;
     max-width: 35vw;
   }
-
+  .pricing__box .subscription-level {
+    width:37%;
+    max-height: 100px;
+  }
 }

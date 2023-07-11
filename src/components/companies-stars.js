@@ -17,13 +17,13 @@ export function CompaniesStars() {
     return (
         <div className="companies-bar__stars" >
             <Picture images={[companyStar,webpCompanyStar]}>
-                <motion.img src={companyStar} alt="company-star" variants={rotateVariants} animate="visible" loading='lazy' />
+                <motion.img src={companyStar} alt="company-star" variants={rotateVariants} animate="visible" loading='lazy' width="200px" height="200px"/>
             </Picture>
             <Picture images={[companyStar,webpCompanyStar]}>
-                <motion.img src={companyStar} alt="company-star" variants={rotateVariants} animate="visible" loading='lazy' />
+                <motion.img src={companyStar} alt="company-star" variants={rotateVariants} animate="visible" loading='lazy' width="200px" height="200px"/>
             </Picture>
             <Picture images={[companyStar,webpCompanyStar]}>
-                <motion.img src={companyStar} alt="company-star" variants={rotateVariants} animate="visible" loading='lazy' />
+                <motion.img src={companyStar} alt="company-star" variants={rotateVariants} animate="visible" loading='lazy' width="200px" height="200px"/>
             </Picture>
         </div>
     )

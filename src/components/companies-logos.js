@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom';
 export function CompaniesLogos() {
     return (
         <div className="companies-bar__logos">
-            <Link to="https://blockchain.com"><img src={blockchaincom} alt="blockchain.com logo" /></Link>
-            <Link to="https://fireblocks.com"><img src={fireblocks} alt="fireblocks logo" /></Link>
-            <Link to="https://dapper.com"><img src={dapper} alt="dapper logo" /></Link>
-            <Link to="https://opensea.com"><img src={opensea} alt="opensea logo" /></Link>
+            <Link to="https://blockchain.com"><img src={blockchaincom} alt="blockchain.com logo" width="30%" height="80%"/></Link>
+            <Link to="https://fireblocks.com"><img src={fireblocks} alt="fireblocks logo" width="30%" height="80%"/></Link>
+            <Link to="https://dapper.com"><img src={dapper} alt="dapper logo" width="30%" height="80%"/></Link>
+            <Link to="https://opensea.com"><img src={opensea} alt="opensea logo" width="30%" height="80%"/></Link>
         </div>
     )
 }

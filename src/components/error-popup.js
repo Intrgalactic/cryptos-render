@@ -5,7 +5,7 @@ export function ErrorPopup({errReason,errDescription}) {
     return (
         <div className="error-popup">
             <Picture images={[warning,webpWarning]}>
-                <img src={warning} alt="warning" loading='lazy'/>
+                <img src={warning} alt="warning" loading='lazy' width="200px" height="80%"/>
             </Picture>
             <div className="error-popup__reason">
             <h3>{errReason}</h3>

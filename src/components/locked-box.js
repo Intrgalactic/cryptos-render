@@ -5,7 +5,7 @@ export function LockedBox({ children }) {
     return (
         <div className="locked-box">
             <Picture images={[warning, webpWarning]}>
-                <img src={warning} alt="warning" loading='lazy' />
+                <img src={warning} alt="warning" loading='lazy' width="80%" height="200px"/>
             </Picture>
             <p>Please connect your wallet</p>
             {children}

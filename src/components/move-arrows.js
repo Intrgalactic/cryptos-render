@@ -23,10 +23,10 @@ export const MoveArrows = forwardRef((props, ref) => {
     return (
         <div className="move-arrows">
             <Picture images={[moveArr,webpMoveArr]}>
-                <img src={webpMoveArr} alt="move arrow" onClick={(e) => { scrollToElement(e) }} className='left-move-arrow' loading='lazy' />
+                <img src={webpMoveArr} alt="move arrow" onClick={(e) => { scrollToElement(e) }} className='left-move-arrow' loading='lazy' width="200px" height="200px"/>
             </Picture>
             <Picture images={[moveArr,webpMoveArr]}>
-                <img src={webpMoveArr} alt="move arrow" onClick={(e) => { scrollToElement(e) }} className='right-move-arrow' loading='lazy'/>
+                <img src={webpMoveArr} alt="move arrow" onClick={(e) => { scrollToElement(e) }} className='right-move-arrow' loading='lazy' width="200px" height="200px"/>
             </Picture>
         </div>
     )

@@ -8,12 +8,12 @@ export function TestimonialBox({ name, lastname, description }) {
     return (
         <div className="testimonial-box">
             <Picture images={[testimonialUser, webpTestimonialUser]}>
-                <img src={testimonialUser} alt="testimonial user face" />
+                <img src={testimonialUser} alt="testimonial user face" width="45%" height="130px"/>
             </Picture>
             <h1>{name} {lastname}</h1>
             <p>{description}</p>
             <Picture images={[stars, webpStars]}>
-                <img src={stars} alt="rating" />
+                <img src={stars} alt="rating" width="80%" height="45px"/>
             </Picture>
         </div>
     )
