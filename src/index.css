@@ -1326,6 +1326,10 @@ header nav {
   margin-top: 0;
   align-items: center;
   background-image: url('assets/images/register-faq-bg.jpg');
+  background-image:image-set(
+    url('assets/images/register-faq-bg.webp') type('image/webp'),
+    url('assets/images/register-faq-bg.jpg') type('image/jpeg')
+  );
   background-size: 100% 100%;
   background-position-x: right;
   background-attachment: fixed;
