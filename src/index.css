@@ -1352,6 +1352,7 @@ header nav {
 
 .register-app .faq__record {
   text-shadow: 0px 4px 4px black;
+  background-image:url('assets/images/faq-record-bg.jpg');
   background-image: image-set(url('assets/images/faq-record-bg.webp') type('image/webp'),
       url('assets/images/faq-record-bg.jpg') type('image/jpeg'));
   background-size: cover;
@@ -1398,6 +1399,7 @@ header nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-image: url('assets/images/register-section-bg.jpg');
   background-image: image-set(url('assets/images/register-section-bg.webp') type('image/webp'),
       url('assets/images/register-section-bg.jpg') type('image/jpeg'));
   background-size: cover;
@@ -1407,8 +1409,9 @@ header nav {
 }
 
 .register__incentive {
+  background-image: url('assets/images/register-incentive-bg.jpg');
   background-image: image-set(url('assets/images/register-incentive-bg.webp') type('image/webp'),
-      url('assets/images/register-incentive-bg.jpg') type('image/jpeg'));
+      url('assets/images/register-incentive-bg.jpg') type('image/jpeg')); 
   background-size: cover;
   justify-content: flex-end;
   padding-inline: 10%;
