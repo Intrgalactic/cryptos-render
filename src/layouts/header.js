@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { animateVariant } from 'pages/home';
 import { NavBtn } from 'components/nav-btn';
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Picture } from 'components/picture';
 
 export default function Header(props) {
@@ -14,6 +14,7 @@ export default function Header(props) {
     const windowWidth = useRef({
         current: window.innerWidth
     })
+    const location = useLocation().pathname;
     useEffect(() => {
         changeToggle();
         window.addEventListener("resize", () => {
@@ -45,7 +46,7 @@ export default function Header(props) {
                 </Picture>
             </Link>
             <NavBtn toggleNav={toggleNav} />
-            {toggle ? <Nav toggle={toggle} toggleNav={toggleNav} ref={navRef} /> : null}
+            {toggle ? <Nav toggle={toggle} toggleNav={toggleNav} ref={navRef}/> : null}
         </motion.header>
     )
 }

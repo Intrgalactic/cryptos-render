@@ -33,7 +33,7 @@ const MoveArrows = lazy(() => import("components/move-arrows").then(module => {
 }))
 const ExchangeNav = lazy(() => import("layouts/exchange-nav"))
 
-export default function Exchange() {
+export default function Exchange({isLogged}) {
     const initialErrState = {
         errorReason: '',
         errorDescription: '',

@@ -19,7 +19,6 @@ const CompaniesLogos = lazy(() => import("components/companies-logos").then(modu
 export default function Footer() {
     const location = useLocation();
     const path = location.pathname;
-    console.log(path === "/pricing");
     return (
         <>
             <Picture images={path === "/pricing" ? [pricingFooterShape, webpPricingFooterShape] : [footerShape, webpFooterShape]}>

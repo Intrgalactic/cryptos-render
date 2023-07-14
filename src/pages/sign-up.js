@@ -3,7 +3,7 @@ import Header from "layouts/header";
 import Faq from "layouts/faq";
 import { motion } from "framer-motion";
 import Footer from "layouts/footer";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useState } from "react";
 import Loader from "layouts/loader";
 const FaqRecord = lazy(() => import("components/faq-record").then(module => {
     return {default:module.FaqRecord}
@@ -13,7 +13,7 @@ const RegisterSection = lazy(() => import("components/register-section"));
 export default function SignUp() {
     return (
         <Suspense fallback={<Loader/>}>
-            <Header />
+            <Header/>
             <div className="register-app">
                 <Incentive class="register__incentive">
                     <p>INVITE YOUR FRIENDS WITH YOUR REFERRAL CODE AND <br /> GET 25% DISCOUNT PER EVERY THAT WILL BUY A<br /> SUBSCRIPTION!</p>

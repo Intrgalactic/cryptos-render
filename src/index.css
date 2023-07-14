@@ -30,7 +30,6 @@ section:not(.testimonials, .video-section, .companies-bar, .incentive, .news, .f
 header {
   margin-inline: 10vw;
 }
-
 .hero__heading,
 .section-heading,
 .chart-block__description-heading,
@@ -1018,15 +1017,49 @@ footer h3 {
   width: 60%;
   margin: auto;
 }
-
-.register__form-err {
+.auth__form-err,.auth__form-success,.password-reset {
   font-family: Roboto-Bold;
-  color: red;
   font-size: 1.2em;
+  display: block;
+}
+.auth__form-err,.auth__form-success {
   width: 80%;
+  height: fit-content;
   padding-inline: 10%;
 }
 
+.auth__form-err {
+  color:red;
+}
+.auth__form-success {
+  color:#0adf00;
+}
+.password-reset {
+  text-decoration: none;
+
+  position: relative;
+  color:black;
+  margin: auto;
+}
+.password-reset:after {
+  position: absolute;
+  left:0;
+  bottom:-5px;
+  width: 100%;
+  content:'';
+  height: 4px;
+  border-radius: 20px;
+  background-color: black;
+  transition: transform 300ms ease;
+  transform-origin: right;
+  transform:scaleX(0);
+  
+}
+.password-reset:hover:after {
+  transform-origin: left;
+  transform: scaleX(1);
+  
+}
 .faq__record hr {
   border-width: 2px;
   border-color: black;
@@ -1347,7 +1380,7 @@ header nav {
 
 .register__faq-right-block {
   width: 60vw;
-  height: 480px;
+  height: 490px;
   padding: 20px;
   overflow-y: scroll;
   -ms-overflow-style: none;
@@ -1441,8 +1474,8 @@ header nav {
   font-size: 1.8em;
 }
 
-.register__form {
-  height: 600px;
+.auth__form {
+  height: auto;
   width: 35vw;
   padding-block: 80px;
   border-radius: 50px;
@@ -1450,12 +1483,12 @@ header nav {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.45);
 }
 
-.register__form form {
+.auth__form form {
   display: grid;
   row-gap: 30px;
 }
 
-.register__form form input:not(.register__form form input[type="checkbox"]) {
+.auth__form form input:not(.register__form form input[type="checkbox"]) {
   background-color: #D9D9D9;
   font-size: 1.5em;
   border-radius: 50px;
@@ -1467,15 +1500,23 @@ header nav {
   font-family: Roboto-Bold;
   text-align: center;
 }
+.login-app .section-heading {
+  margin-block:50px;
+}
+.login-form {
+  display:block;
+  margin: auto;
+  height: auto;
+}
 
-.register__form form input::placeholder {
+.auth__form form input::placeholder {
   text-transform: uppercase;
   color: black;
   opacity: 1;
 
 }
 
-.register__form form label:first-of-type {
+.auth__form form label:first-of-type {
   width: 80%;
   padding-inline: 10%;
   font-family: Roboto-Bold;
@@ -1483,23 +1524,56 @@ header nav {
   align-items: center;
 
 }
-
-.register__form form input[type="checkbox"] {
+.reset-password-app {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  gap:100px;
+  height: 70vh;
+}
+.password-reset__left-block {
+  width: 30vw;
+}
+.password-reset__right-block .section-heading {
+  margin-block:50px;
+  font-size:2em;
+}
+.password-reset__left-block p {
+  text-align: center;
+  font-size:3em;
+  font-family:Exo2-ExtraBold;
+}
+.auth__form form input[type="checkbox"] {
   width: 48px;
   position: relative;
 }
 
-.register__form .cta-btn {
+.auth__form .cta-btn {
   margin: auto;
   width: 80%;
   height: 80px;
   background-color: #DC03FF;
 }
-
+.not-found-app .section-heading {
+  margin-block:60px;
+}
 .wallet-app footer {
   background-color: #4600d3;
 }
-
+.not-found {
+  width: 40vw;
+}
+.user-action-app .section-heading {
+  margin-block:50px;
+}
+.confirm-password-reset-form {
+  display:block;
+  margin: auto;
+}
+.user-action-type {
+  font-family: Roboto-Bold;
+  font-size:1.3em;
+}
 @media screen and (max-width:1550px) {
   .wallet-app .benefit-box {
     width: 30vw;
@@ -1568,7 +1642,15 @@ header nav {
   .pricing__box {
     width: 30vw;
   }
-
+  .password-reset__left-block {
+    height: 50%;
+  }
+  .reset-password-app .auth__form {
+    width: 40vw;
+  }
+  .reset-password-app .auth__form form {
+    font-size: 0.9em;
+  }
   .testimonial-box picture:first-of-type img {
     width: 40%;
   }
@@ -1586,7 +1668,7 @@ header nav {
   }
 
   .register__left-block,
-  .register__form {
+  .auth__form {
     margin: auto;
   }
 
@@ -1619,7 +1701,7 @@ header nav {
     width: 45vw;
   }
 
-  .register__form {
+  .auth__form {
     width: 60vw;
   }
 
@@ -1692,7 +1774,19 @@ header nav {
   .chart-block:after {
     display: none;
   }
-
+  .password-reset__left-block {
+    display:none;
+  }
+ 
+  .not-found {
+    width: 80vw;
+  }
+  .reset-password-app {
+    display: block;
+  }
+  .password-reset__left-block {
+    height: 100%;
+  }
   .register-app .section-heading-description {
     font-size: 1.4em;
   }
@@ -1733,7 +1827,7 @@ header nav {
     padding-block: 50px;
   }
 
-  .register__form {
+  .auth__form {
     margin: auto;
     width: 70vw;
     display: block;
@@ -2021,7 +2115,7 @@ header nav {
     font-size: 1.2em;
   }
 
-  .register__form {
+  .auth__form {
     height: fit-content;
     padding-block: 40px;
   }
@@ -2289,8 +2383,20 @@ header nav {
     margin-bottom: 100px;
     margin-top: 150px;
   }
+  .not-found-app .section-heading {
+    margin-block:20px; 
+  }
   .benefit-box__heading {
     font-size:1.1em;
+  }
+  .reset-password-app .password-form form {
+    font-size:0.8em;
+  }
+  .login-app .auth__form-err {
+    margin-bottom:40px;
+  }
+  .password-reset {
+    margin-bottom: 50px;
   }
   footer picture:first-of-type img {
     height: auto;
@@ -2309,12 +2415,9 @@ header nav {
     padding-inline: 5%;
   }
 
-  .register__form {
-    height: 620px;
-    padding-bottom: 100px;
-    width: 80vw;
-    margin: auto;
-
+  .login-form {
+    padding: 0;
+    margin-bottom: 50px;
   }
   header img {
     width: 60vw;
@@ -2334,30 +2437,50 @@ header nav {
     text-align: left;
   }
 
-  .register__form form {
-    height: 530px;
+  .auth__form form {
+    height:auto;
   }
 
-  .register__form form input:not(.register__form form input[type="checkbox"]) {
+  .auth__form form input:not(.register__form form input[type="checkbox"]) {
     width: 80%;
     display: block;
     margin: auto;
     font-size: 1em;
   }
 
-  .register__form form label {
+  .auth__form form label {
     font-size: 0.7em;
-  }
 
+  }
+  .auth__form .cta-btn {
+    height: 60px;
+  }
+  .register__form {
+    width: 80vw;
+    height: auto;
+  }
+  .register-app .auth__form form input:nth-child(6):not(.register__form form input[type="checkbox"]) {
+    font-size:0.8em;
+  }
+  .login-form form {
+    display:block;
+    height: 400px;
+    gap:0;
+    padding-block:50px; 
+  }
+  .login-app .auth__form form {
+    height: auto;
+  }
+  .login-app .auth__form form input:not(.register__form form input[type="checkbox"]) {
+    margin-bottom:50px;
+  }
   .exchange-nav {
     display: block;
     padding-inline: 0;
   }
-
   .register__faq .section-heading {
     margin-top: 30px;
   }
-
   .register-app .faq__record {
     width: 80%;
     font-size: 0.7em;
