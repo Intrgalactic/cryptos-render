@@ -50,6 +50,7 @@ export function RegisterForm() {
                 });
         }).then(() => {
             sendEmailVerification(auth.currentUser).then(() => {
+                setValidateErr(false);
                 setSuccessState("We sent a verify mail to your inbox");
             })
                 .catch((err) => {
