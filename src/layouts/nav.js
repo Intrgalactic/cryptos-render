@@ -25,7 +25,7 @@ export const Nav = forwardRef((props, ref) => {
                     navigate('/dashboard');
                 }, 5000);
             }
-            if (route === "log-in") {
+            if (route === "/log-in") {
                 navigate('/dashboard');
             }
         }
