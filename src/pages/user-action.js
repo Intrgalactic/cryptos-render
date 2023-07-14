@@ -91,7 +91,7 @@ export default function UserAction() {
                         {isEmailVerified &&
                             <>
                                 <SectionHeading heading={["Your e-mail has been verified"]} />
-                                <CtaBtn btnText={auth.currentUser ? "Dashboard" : "Login"} action={() => auth.currentUser ? navigate('/log-in') : navigate("/dashboard")} />
+                                <CtaBtn btnText={auth.currentUser ? "Dashboard" : "Login"} action={() => auth.currentUser ? navigate('/dashboard') : navigate("/log-in")} />
                             </>
                         }
                     </>
