@@ -24,12 +24,7 @@ export function LoginForm() {
     function logToAccount() {
         signInWithEmailAndPassword(auth, userPersonalData.current.email, userPersonalData.current.password)
             .then(() => {
-                if (!auth.currentUser.emailVerified) {
-                    setValidateErr("Your e-mail is not verified");
-                }
-                else {
-
-                }
+                navigate('/dashboard');
             })
             .catch((err) => {
                 getFirebaseErr(err.message,setFirebaseErr);
