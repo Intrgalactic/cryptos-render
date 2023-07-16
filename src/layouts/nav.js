@@ -4,9 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { authContext } from "context/authContext";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "firebase.js";
-import { CtaBtn } from "components/cta-btn";
 
 
 export const Nav = forwardRef((props, ref) => {
@@ -17,6 +14,7 @@ export const Nav = forwardRef((props, ref) => {
     const navigate = useNavigate();
     const route = location.pathname;
     const [paths, setPaths] = useState(['/wallet', '/exchange', '/pricing', '/faq', '/log-in', '/sign-up']);
+
     useEffect(() => {
         if (isLogged) {
             setPaths(['/wallet', '/exchange', '/pricing', '/faq', '/dashboard', '/log-out']);

@@ -13,15 +13,12 @@ import { auth } from 'firebase.js';
 import { authContext } from 'context/authContext';
 import NotFound from 'pages/not-found';
 import UserAction from 'pages/user-action';
+import Dashboard from 'pages/dashboard';
+import Settings from 'pages/settings';
+import { logOutUser } from 'utils/utilities';
+
 function App() {
   const [isLogged, setIsLogged] = useState();
-  function logOutUser() {
-    signOut(auth).then(() => {
-      setIsLogged(false);
-    }).catch(err => {
-      console.log(err);
-    })
-  }
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -44,6 +41,8 @@ function App() {
         <Route path="/log-in" exact element={<authContext.Provider value={{isLogged:isLogged,logOutUser:logOutUser}}> <Login/></authContext.Provider>} />
         <Route path="/reset-password" exact element={<authContext.Provider value={{isLogged:isLogged,logOutUser:logOutUser}}><PasswordReset/></authContext.Provider>} />
         <Route path="/user-action" exact element={<authContext.Provider value={{isLogged:isLogged,logOutUser:logOutUser}}><UserAction/></authContext.Provider>} />
+        <Route path="/dashboard" exact element={<authContext.Provider value={{isLogged:isLogged,logOutUser:logOutUser}}><Dashboard/></authContext.Provider>} />
+        <Route path="/settings" element={<authContext.Provider value={{isLogged:isLogged,logOutUser:logOutUser}}><Settings/></authContext.Provider>} />
         <Route path="/*" element={<authContext.Provider value={{isLogged:isLogged,logOutUser:logOutUser}}><NotFound/></authContext.Provider>} />
       </Routes>
     </div>

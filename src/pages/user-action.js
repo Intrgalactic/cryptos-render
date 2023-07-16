@@ -61,12 +61,9 @@ export default function UserAction() {
             checkIsCodeGood(err.message);
         })
     }
-    console.log(isEmailVerified);
     function checkIsCodeGood(err) {
         if (err === "Firebase: Error (auth/invalid-action-code)." || (err === "Firebase: Error (auth/internal-error)." && !isEmailVerified)) {
-            setTimeout(() => {
-                navigate('/log-in');
-            },10000);
+            navigate('/log-in');
         }
         else {
             getFirebaseErr(err, setFirebaseErr);
