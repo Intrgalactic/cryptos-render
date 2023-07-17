@@ -16,6 +16,8 @@
     "express-async-handler": "^1.2.0",
     "mongodb": "^5.7.0",
     "nodemon": "^2.0.22"
+  },
+  "devDependencies": {
+    "purify-css": "^1.2.5"
   }
-
 }

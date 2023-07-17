@@ -6,6 +6,7 @@ const cors = require('cors');
 const createUser = require('./middleware/create-user');
 const updateUser = require('./middleware/update-user');
 const deleteUser = require('./middleware/delete-user');
+const getUser = require('./middleware/get-user');
 
 require('dotenv').config();
 
@@ -27,6 +28,8 @@ app.get('/create-user',cors(corsOptions),createUser(usersCollection));
 app.get('/delete-user',cors(corsOptions),deleteUser(usersCollection));
 
 app.get('/update-user',cors(corsOptions),updateUser(usersCollection));
+
+app.get('/get-user',cors(corsOptions),getUser(usersCollection));
 
 app.listen(process.env.PORT, () => {
     console.log("app listening");
