@@ -1695,7 +1695,7 @@ header nav {
 .dashboard-first-row,
 .dashboard-second-row {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   flex-wrap: wrap;
   column-gap: 100px;
 }
@@ -1716,6 +1716,7 @@ header nav {
 }
 .dashboard-second-row .dashboard-box__content {
   width: calc(40vw + 50px);
+  height: 400px;
 }
 
 .dashboard-first-row .dashboard-box__content {
@@ -1754,7 +1755,7 @@ header nav {
   padding-inline: 25px;
   padding-block: 50px;
   width: 100%;
-  
+  height: fit-content;
   margin: auto;
 }
 
@@ -1818,8 +1819,8 @@ header nav {
   margin-block:0;
 }
 .pnl-month-chart canvas {
-  width: 100%;
-  margin: auto;
+ width: 100%;
+  height: auto;
 }
 .settings .dashboard-first-row .dashboard-box__content {
   height: 300px;
@@ -2064,10 +2065,10 @@ header nav {
   .dashboard-template main {
     padding-left:45vw;
   }
-  .dashboard-first-row .dashboard-box__content,.dashboard-second-row .dashboard-box__content,.dashboard-box:last-of-type .dashboard-box__content {
+  .dashboard-first-row .dashboard-box__content,.dashboard-second-row .dashboard-box__content,.dashboard .dashboard-box:last-of-type .dashboard-box__content {
     width: 50vw;
   }
-  .dashboard .dashboard-second-row .dashboard-box:first-of-type .dashboard-box__content {
+  .dashboard-second-row .dashboard-box:first-of-type .dashboard-box__content {
     height: 200px;
     width: calc(50vw - 50px);
   }
@@ -2079,6 +2080,7 @@ header nav {
     margin-inline:0;
     height: 200px;
   }
+
 }
 @media screen and (max-width:1023px) {
   .chart-block:after {
@@ -2380,7 +2382,7 @@ header nav {
     width: 100vw;
   }
 
-  .dashboard-first-row .dashboard-box__content {
+  .dashboard-first-row .dashboard-box__content,.dashboard .dashboard-box:last-of-type .dashboard-box__content {
     width: 80vw;
     margin: auto;
   }
@@ -2396,10 +2398,6 @@ header nav {
   .dashboard-second-row .dashboard-box:first-of-type .dashboard-box__content {
     height: 200px;
     width: calc(80vw - 50px);
-  }
-
-  .dashboard-box:last-of-type .dashboard-box__content {
-    width: 80vw;
   }
 
   .companies-bar__stars img {
@@ -2703,6 +2701,9 @@ header nav {
 @media screen and (max-width:350px) {
   .benefit-box__description {
     font-size: 1em;
+  }
+  .settings .dashboard-first-row .dashboard-box:first-of-type .dashboard-box__content{
+    width: 90vw;
   }
   .auth__form form input:not(.register__form form input[type=checkbox]) {
     font-size: 0.8em;
