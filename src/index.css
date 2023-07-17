@@ -1594,11 +1594,14 @@ header nav {
   font-family: Roboto-Bold;
   font-size: 1.3em;
 }
+
 .dashboard-template {
-  background-image: url('assets/images/dashboard-bg.png');
+  background-image: image-set(url("assets/images/dashboard-bg.webp") type('image/webp'),
+      url("assets/images/dashboard-bg.png") type('image/png'));
   background-size: cover;
   min-height: 100vh;
 }
+
 .dashboard-template nav {
   width: 20vw;
   height: 100vh;
@@ -1668,12 +1671,13 @@ header nav {
 }
 
 .balance-part:first-of-type .balance-part__amount {
-  background-image: url("assets/images/free-balance-bg.png");
+  background-image: image-set(url("assets/images/free-balance-bg.webp") type('image/webp'),
+      url("assets/images/free-balance-bg.png") type('image/png'))
 }
 
 .balance-part:last-of-type .balance-part__amount {
-  background-image: url("assets/images/freezed-balance-bg.png");
-
+  background-image: image-set(url("assets/images/freezed-balance-bg.webp") type('image/webp'),
+      url("assets/images/freezed-balance-bg.png") type('image/png'))
 }
 
 .balance-part__heading {
@@ -1707,6 +1711,7 @@ header nav {
 .dashboard-box {
   border-radius: 30px;
 }
+
 .dashboard-box__content {
   width: 100%;
   border-radius: 30px;
@@ -1714,6 +1719,7 @@ header nav {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
   background-color: white;
 }
+
 .dashboard-second-row .dashboard-box__content {
   width: calc(40vw + 50px);
   height: 400px;
@@ -1808,54 +1814,65 @@ header nav {
   font-family: Roboto-Bold;
   font-size: 1.4em;
 }
+
 .settings .data-specific-details {
-  padding-inline:5%;
-  gap:10px;
+  padding-inline: 5%;
+  gap: 10px;
 
   justify-content: left;
-  font-size:1em;
+  font-size: 1em;
 }
+
 .settings .auth__form-err {
-  margin-block:0;
+  margin-block: 0;
 }
+
 .pnl-month-chart canvas {
- width: 100%;
+  width: 100%;
   height: auto;
 }
+
 .settings .dashboard-first-row .dashboard-box__content {
   height: 300px;
 }
-.dashboard-change-password-form   {
-  display:flex;
+
+.dashboard-change-password-form {
+  display: flex;
   flex-wrap: wrap;
-  row-gap:20px;
+  row-gap: 20px;
   align-items: center;
   height: 100%;
 }
+
 .dashboard-change-password-form input {
   width: 80%;
   height: 50px;
   text-align: center;
   background-color: #FF00D6;
 }
+
 .dashboard-change-password-form input::placeholder {
-  color:black;
+  color: black;
   opacity: 1;
 }
-.dashboard-change-password-form input,.dashboard-change-password-form button {
-  margin:auto;
-  font-size:1.2em;
-  color:black;
-  border:none;
-  font-family:Exo2-ExtraBold;
-  box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+
+.dashboard-change-password-form input,
+.dashboard-change-password-form button {
+  margin: auto;
+  font-size: 1.2em;
+  color: black;
+  border: none;
+  font-family: Exo2-ExtraBold;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
 }
+
 .dashboard-change-password-form button {
   width: 50%;
   height: 50px;
   background-color: #05FF00;
 }
+
 @media screen and (max-width:1550px) {
   .wallet-app .benefit-box {
     width: 30vw;
@@ -2055,37 +2072,48 @@ header nav {
     width: 80vw;
   }
 }
+
 @media screen and (max-width:1550px) and (min-width:700px) {
   .dashboard-box {
     width: 50vw;
   }
+
   .dashboard-template nav {
     width: 40vw;
   }
+
   .dashboard-template main {
-    padding-left:45vw;
+    padding-left: 45vw;
   }
-  .dashboard-first-row .dashboard-box__content,.dashboard-second-row .dashboard-box__content,.dashboard .dashboard-box:last-of-type .dashboard-box__content {
+
+  .dashboard-first-row .dashboard-box__content,
+  .dashboard-second-row .dashboard-box__content,
+  .dashboard .dashboard-box:last-of-type .dashboard-box__content {
     width: 50vw;
   }
+
   .dashboard-second-row .dashboard-box:first-of-type .dashboard-box__content {
     height: 200px;
     width: calc(50vw - 50px);
   }
+
   .dashboard .dashboard-second-row .dashboard-box:last-of-type .dashboard-box__content {
-    padding:0;
+    padding: 0;
     height: 400px;
   }
+
   .pnl-month-chart {
-    margin-inline:0;
+    margin-inline: 0;
     height: 200px;
   }
 
 }
+
 @media screen and (max-width:1023px) {
   .chart-block:after {
     display: none;
   }
+
   .password-reset__left-block {
     display: none;
   }
@@ -2382,7 +2410,8 @@ header nav {
     width: 100vw;
   }
 
-  .dashboard-first-row .dashboard-box__content,.dashboard .dashboard-box:last-of-type .dashboard-box__content {
+  .dashboard-first-row .dashboard-box__content,
+  .dashboard .dashboard-box:last-of-type .dashboard-box__content {
     width: 80vw;
     margin: auto;
   }
@@ -2702,18 +2731,23 @@ header nav {
   .benefit-box__description {
     font-size: 1em;
   }
-  .settings .dashboard-first-row .dashboard-box:first-of-type .dashboard-box__content{
+
+  .settings .dashboard-first-row .dashboard-box:first-of-type .dashboard-box__content {
     width: 90vw;
   }
+
   .auth__form form input:not(.register__form form input[type=checkbox]) {
     font-size: 0.8em;
   }
+
   .cta-btn {
     width: 80vw;
   }
+
   .confirm-password-reset-form form input {
-    font-size:0.7em;
+    font-size: 0.7em;
   }
+
   .section-heading {
     font-size: 1.3em;
   }
@@ -2742,9 +2776,9 @@ header nav {
   .user-action-type {
     font-size: 0.7em;
     width: 90%;
-    margin:auto;
+    margin: auto;
   }
-  
+
   .password-reset {
     width: fit-content;
   }

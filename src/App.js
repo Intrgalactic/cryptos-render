@@ -29,7 +29,7 @@ function App() {
       }
     })
   },[setIsLogged]);
-  
+  console.log(isLogged);
   return (
     <div className="App">
       <Routes>

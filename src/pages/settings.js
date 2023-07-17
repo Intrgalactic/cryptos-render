@@ -11,12 +11,14 @@ import { validateForm, validatePassword } from "utils/utilities";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { authContext } from "context/authContext";
+import Loader from "layouts/loader";
 export default function Settings() {
     const [userDetails, setUserDetails] = useState({});
     const passwordsRef = useRef({
         password: "",
         newPassword: ""
     });
+    const [isLoaded, setIsLoaded] = useState(false);
     const navigate = useNavigate();
     const [validateErr, setValidateErr] = useState();
     const authProps = useContext(authContext);
@@ -31,6 +33,7 @@ export default function Settings() {
                         name: data.name,
                         lastName: data.lastName
                     })
+                    setIsLoaded(true);
                 }).catch(err => {
                     console.log(err);
                 })

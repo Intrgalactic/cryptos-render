@@ -112,10 +112,8 @@ export function isEqual(firstItem, secondItem) {
     return true;
 }
 
-export function logOutUser(setIsLogged) {
-    signOut(auth).then(() => {
-        setIsLogged(false);
-    }).catch(err => {
+export function logOutUser() {
+    signOut(auth).catch(err => {
         console.log(err);
     })
 }
