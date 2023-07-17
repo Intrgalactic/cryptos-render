@@ -9,7 +9,8 @@ import { DashboardBox } from "components/dashboard-box";
 import { PnlChart } from "components/user-pnl-chart";
 import { validateForm, validatePassword } from "utils/utilities";
 import { useNavigate } from "react-router-dom";
-
+import { useContext } from "react";
+import { authContext } from "context/authContext";
 export default function Settings() {
     const [userDetails, setUserDetails] = useState({});
     const passwordsRef = useRef({
@@ -18,29 +19,23 @@ export default function Settings() {
     });
     const navigate = useNavigate();
     const [validateErr, setValidateErr] = useState();
+    const authProps = useContext(authContext);
     useEffect(() => {
-        onAuthStateChanged(auth, async (user) => {
-            if (user) {
-                console.log(`${process.env.REACT_APP_FETCH_URL}get-user?email=${user.email}`);
-                await fetch(`${process.env.REACT_APP_FETCH_URL}get-user?email=${user.email}`)
-                    .then((response) => response.json())
-                    .then(data => {
-                        setUserDetails({
-                            displayName: user.displayName,
-                            email: user.email,
-                            name: data.name,
-                            lastName: data.lastName
-                        })
-                    }).catch(err => {
-                        console.log(err);
+        if (authProps.isLogged) {
+            fetch(`${process.env.REACT_APP_FETCH_URL}get-user?email=${auth.currentUser.email}`)
+                .then((response) => response.json())
+                .then(data => {
+                    setUserDetails({
+                        displayName: auth.currentUser.displayName,
+                        email: auth.currentUser.email,
+                        name: data.name,
+                        lastName: data.lastName
                     })
-            }
-            else {
-                console.log('not')
-            }
-        })
-
-    }, []);
+                }).catch(err => {
+                    console.log(err);
+                })
+        }
+    }, [setUserDetails]);
     function resetPassword(e) {
         e.preventDefault();
         if (validateForm(passwordsRef.current, setValidateErr) && validatePassword(passwordsRef.current.newPassword, setValidateErr) && validatePassword(passwordsRef.current.password, setValidateErr)) {
