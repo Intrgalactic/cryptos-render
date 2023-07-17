@@ -51,6 +51,7 @@ export function RegisterForm() {
         }).then(() => {
             sendEmailVerification(auth.currentUser).then(() => {
                 setValidateErr(false);
+                setFirebaseError(false);
                 setSuccessState("We sent a verify mail to your inbox");
             })
                 .catch((err) => {
@@ -64,6 +65,7 @@ export function RegisterForm() {
             getFirebaseErr(errorMessage, setFirebaseError);
         })
     }
+    console.log(firebaseErr);
     return (
         <AuthForm formClass="register__form">
             <input type="text" placeholder="your name" required onChange={(e) => { userPersonalData.current.name = e.target.value }} />

@@ -63,7 +63,6 @@ export function validatePassword(data, setErr) {
             return false;
         }
         if (!numberRegEx.test(data)) {
-            console.log(data);
             setErr("Password must contain atleast one digit");
             return false;
         }
@@ -83,6 +82,7 @@ export function validatePassword(data, setErr) {
             return false;
         }
     }
+    setErr(false);
     return true;
 }
 export function getFirebaseErr(err, setErr) {

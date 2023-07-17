@@ -24,30 +24,34 @@ export default function PasswordReset() {
     const location = useLocation();
     const search = new URLSearchParams(location.search);
     const [successState, setSuccessState] = useState();
-    const userDataRef = useRef({
-        email: "",
-        password: null,
-        newPassword: "",
-        secondNewPassword: "",
-    })
+    const emailRef = useRef();
+    const passwordRef = useRef();
+    const newPasswordRef = useRef();
+    const secondNewPasswordRef = useRef();
     const [validateErr, setValidateErr] = useState();
     function validatePasswordForm(e) {
-        const credentials = EmailAuthProvider.credential(userDataRef.current.email, userDataRef.current.password);
+        const userDataRef = {
+            email: typeof(emailRef.current) === "object" ? emailRef.current.value : emailRef.current,
+            password: isLogged ? typeof(passwordRef.current) === "object" ? passwordRef.current.value : passwordRef.current : null,
+            newPassword: typeof(newPasswordRef.current) === "object" ? newPasswordRef.current.value : newPasswordRef.current,
+            secondNewPassword: typeof(secondNewPasswordRef.current) === "object" ? secondNewPasswordRef.current.value : secondNewPasswordRef.current,
+        }
+        const credentials = EmailAuthProvider.credential(userDataRef.email, userDataRef.password);
         e.preventDefault();
         if (successState) {
             navigate('/dashboard');
             return false;
         }
-        if (validateForm(userDataRef.current,setValidateErr)) {
-            if (userDataRef.current.newPassword !== userDataRef.current.secondNewPassword) {
+        if (validateForm(userDataRef,setValidateErr)) {
+            if (userDataRef.newPassword !== userDataRef.secondNewPassword) {
                 setValidateErr("The passwords are different!");
                 return false;
             }
             else {
                 if (!isLogged) {
                     if (!isAuthorizedWithEmail) {
-                        if (validatePassword(userDataRef.current.newPassword, setValidateErr)) {
-                            authorizeUserWithEmail();
+                        if (validatePassword(userDataRef.newPassword, setValidateErr)) {
+                            authorizeUserWithEmail(userDataRef);
                         }
                         else {
                             return false;
@@ -60,8 +64,8 @@ export default function PasswordReset() {
                         return false;
                     }
                     reauthenticateWithCredential(auth.currentUser, credentials).then(() => {
-                        if (validatePassword(userDataRef.current.newPassword, setValidateErr)) {
-                            updateUserPassword();
+                        if (validatePassword(userDataRef.newPassword, setValidateErr)) {
+                            updateUserPassword(userDataRef);
                         }
                     }).catch(err => {
                         getFirebaseErr(err.message, setValidateErr);
@@ -73,16 +77,16 @@ export default function PasswordReset() {
             return true;
         }
     }
-    function authorizeUserWithEmail() {
-        sendPasswordResetEmail(auth, userDataRef.current.email).then(() => {
+    function authorizeUserWithEmail(userDataRef) {
+        sendPasswordResetEmail(auth, userDataRef.email).then(() => {
             setSuccessState("Verify mail has been sent to your inbox");
         }).catch(err => {
             getFirebaseErr(err.message, setValidateErr);
         })
     }
-    function updateUserPassword() {
-        if (userDataRef.current.password !== userDataRef.current.newPassword) {
-            updatePassword(auth.currentUser, userDataRef.current.newPassword).then(() => {
+    function updateUserPassword(userDataRef) {
+        if (userDataRef.password !== userDataRef.newPassword) {
+            updatePassword(auth.currentUser, userDataRef.newPassword).then(() => {
                 setSuccessState("Password updated");
 
             }).catch(err => {
@@ -93,6 +97,7 @@ export default function PasswordReset() {
             setValidateErr("New password must be different than the latest");
         }
     }
+
     return (
         <Suspense fallback={<Loader />}>
             <Header />
@@ -105,10 +110,10 @@ export default function PasswordReset() {
                 <SectionRightBlock class="password-reset__right-block">
                     <SectionHeading heading={["Reset your password"]} />
                     <AuthForm formClass="password-form">
-                        <input type="email" required onChange={(e) => userDataRef.current.email = e.target.value} placeholder="Enter your e-mail" />
-                        {isLogged && <input type="password" required onChange={(e) => userDataRef.current.password = e.target.value} placeholder="Enter your password" />}
-                        <input type="password" required onChange={(e) => userDataRef.current.newPassword = e.target.value} placeholder="Enter new password" />
-                        <input type="password" required onChange={(e) => userDataRef.current.secondNewPassword = e.target.value} placeholder="Enter new password again" />
+                        <input type="email" required onChange={(e) => emailRef.current = e.target.value} placeholder="Enter your e-mail" value={auth.currentUser && auth.currentUser.email} ref={emailRef} defaultValue=""/>
+                        {isLogged && <input type="password" required onChange={(e) => passwordRef.current = e.target.value} ref={passwordRef} placeholder="Enter your password" defaultValue={isLogged ? search.get("oldPassword") && search.get("oldPassword") : ""} />}
+                        <input type="password" required onChange={(e) => newPasswordRef.current = e.target.value} ref={newPasswordRef} placeholder="Enter new password" defaultValue={isLogged ? search.get("newPassword") && search.get("newPassword") : ""}/>
+                        <input type="password" required onChange={(e) => secondNewPasswordRef.current = e.target.value} ref={secondNewPasswordRef} placeholder="Enter new password again" defaultValue={isLogged ? search.get("newPassword") && search.get("newPassword") : ""}/>
                         {validateErr ? <font className="auth__form-err">{validateErr}</font> : successState && <font className="auth__form-success">{successState}</font>}
                         <CtaBtn btnText={isLogged ? "Reset" : isAuthorizedWithEmail ? "Reset" : "Authorize"} action={validatePasswordForm} />
                     </AuthForm>
