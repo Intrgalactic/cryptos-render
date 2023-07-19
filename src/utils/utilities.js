@@ -27,7 +27,6 @@ export function validateForm(data, setErr) {
         if (value === "") {
             for (let i = 0; i < key.length; i++) {
                 if (key[i] === key[i].toUpperCase()) {
-                    console.log(key);
                     errKey = key.substring(0, i);
                     secErrKey = key.substring(i);
                     secErrKey = secErrKey.toLowerCase();
@@ -56,7 +55,6 @@ export function validatePassword(data, setErr) {
     const specialCharRegEx = new RegExp(/(?=.*?[#?!@$%^&*-])/);
     const lowLetterRegEx = new RegExp(/(?=.*?[a-z])/);
     const upperLetterRegEx = new RegExp(/(?=.*?[A-Z])/);
-    console.log(data);
     if (!passwordRegEx.test(data)) {
         if (data.length < 8) {
             setErr("Passwords are too short");
@@ -67,17 +65,14 @@ export function validatePassword(data, setErr) {
             return false;
         }
         if (!specialCharRegEx.test(data)) {
-            console.log(data);
             setErr("Password must contain atleast one special character");
             return false;
         }
         if (!lowLetterRegEx.test(data)) {
-            console.log(data);
             setErr("Password must contain atleast one low character");
             return false;
         }
         if (!upperLetterRegEx.test(data)) {
-            console.log(data);
             setErr("Password must contain atleast one uppercase character");
             return false;
         }

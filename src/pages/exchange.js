@@ -42,7 +42,6 @@ export default function Exchange({isLogged}) {
 
     const [provider, setProvider] = useState();
     const [accounts, setAccounts] = useState(useSessionStorage("eth_accounts"));
-    const [signer, setSigner] = useState();
     const [network, setNetwork] = useState({
         networkName: '',
         chainId: 1,
@@ -74,7 +73,6 @@ export default function Exchange({isLogged}) {
                             sourceTokenAmount: "1"
                         });
                     }
-                    setSigner(web3Provider.getSigner());
                     window.ethereum.on("accountsChanged", refreshAccounts);
                     window.ethereum.on("chainChanged", getNetwork);
                 }
@@ -97,7 +95,8 @@ export default function Exchange({isLogged}) {
             dispatch({ type: err.reason });
         }
 
-    }, [provider]);
+    }, [provider,accounts]);
+    
     async function getNetwork() {
         try {
             const networkProvider = new ethers.providers.Web3Provider(window.ethereum);

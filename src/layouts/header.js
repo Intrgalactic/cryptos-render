@@ -1,28 +1,16 @@
 import logo from 'assets/images/logo.png';
-import webpLogo from 'assets/images/logo.webp';
 import { Nav } from './nav';
 import { motion } from 'framer-motion';
 import { animateVariant } from 'pages/home';
 import { NavBtn } from 'components/nav-btn';
 import { useEffect, useRef, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom';
-import { Picture } from 'components/picture';
+import { Link} from 'react-router-dom';
 
 export default function Header(props) {
     const [toggle, setToggle] = useState(false);
     const navRef = useRef();
-    const windowWidth = useRef({
-        current: window.innerWidth
-    })
-    const location = useLocation().pathname;
     useEffect(() => {
         changeToggle();
-        window.addEventListener("resize", () => {
-            if (windowWidth.current > 700) {
-                changeToggle();
-            }
-            windowWidth.current = window.innerWidth;
-        })
     }, []);
     function toggleNav() {
         if (toggle) {
@@ -41,11 +29,7 @@ export default function Header(props) {
     return (
         <motion.header variants={animateVariant} animate="visible" initial="hidden" className={props.class}>
             <Link to='/'>
-                <picture>
-                    <source srcSet={webpLogo} type="image/webp" />
-                    <source srcSet={logo} type="image/png" />
-                    <img src={logo} alt="company logo" width="100%" height="100%" />
-                </picture>
+                <img src={logo} alt="company logo" width="100%" height="100%" />
             </Link>
             <NavBtn toggleNav={toggleNav} />
             {toggle ? <Nav toggle={toggle} toggleNav={toggleNav} ref={navRef} /> : null}

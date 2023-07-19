@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import { CtaBtn } from "./cta-btn";
 import { createUserWithEmailAndPassword, deleteUser, sendEmailVerification, updateProfile } from "firebase/auth";
 import { auth } from "firebase.js";
-import { useNavigate } from "react-router-dom";
 import { validateForm, validatePassword } from "utils/utilities";
 import { AuthForm } from "./auth-form";
 import { getFirebaseErr } from "utils/utilities";
@@ -16,7 +15,6 @@ export function RegisterForm() {
 
     })
     const checkBoxRef = useRef();
-    const navigate = useNavigate();
     const [validateErr, setValidateErr] = useState();
     const [firebaseErr, setFirebaseError] = useState();
     const [successState, setSuccessState] = useState();

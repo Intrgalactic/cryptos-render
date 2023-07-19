@@ -5,12 +5,13 @@ import { auth } from 'firebase.js';
 import Header from "layouts/header";
 import { verifyPasswordResetCode, confirmPasswordReset, applyActionCode } from "firebase/auth";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { getFirebaseErr, isEqual, validateForm, validatePassword } from "utils/utilities";
 import Loader from "layouts/loader";
 
 export default function UserAction() {
-    const search = new URLSearchParams(useLocation().search);
+    const location = useLocation();
+    const search = useMemo(() => { new URLSearchParams(location.search)},[location]);
     const actionCode = search.get('oobCode');
     const mode = search.get('mode');
     const navigate = useNavigate();
@@ -19,7 +20,6 @@ export default function UserAction() {
     const [successState, setSuccessState] = useState();
     const [emailToReset, setEmailToReset] = useState();
     const [isEmailVerified, setIsEmailVerified] = useState();
-    const userDataRef = useRef({});
     const passwordsRef = useRef({
         newPassword: "",
         repeatedPassword: ""
@@ -36,7 +36,7 @@ export default function UserAction() {
                 break;
             default: navigate('/');
         }
-    }, [setEmailToReset]);
+    }, [setEmailToReset, actionCode, checkIsCodeGood, navigate, search]);
 
     function resetUserPassword(e) {
         e.preventDefault();

@@ -10,10 +10,10 @@ export default function DashboardNav() {
     const isLogged = authProps.isLogged;
     const navigate = useNavigate();
     useEffect(() => {
-        if (!isLogged) {
+        if (isLogged === false) {
             navigate('/');
         }
-    })
+    },[isLogged,navigate]);
    
     return (
         <nav>

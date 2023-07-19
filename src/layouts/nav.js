@@ -33,7 +33,7 @@ export const Nav = forwardRef((props, ref) => {
             }
             setPaths(['/wallet', '/exchange', '/pricing', '/faq', '/log-in', '/sign-up']);
         }
-    }, [isLogged]);
+    }, [isLogged,navigate,route]);
     const index = paths.indexOf(route);
     paths[index] = '/';
     return (

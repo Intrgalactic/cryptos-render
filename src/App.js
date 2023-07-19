@@ -7,7 +7,7 @@ import Wallet from 'pages/wallet';
 import SignUp from 'pages/sign-up';
 import Login from 'pages/log-in';
 import PasswordReset from 'pages/reset-password';
-import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { onAuthStateChanged } from 'firebase/auth';
 import { useEffect, useState } from 'react';
 import { auth } from 'firebase.js';
 import { authContext } from 'context/authContext';
@@ -29,7 +29,6 @@ function App() {
       }
     })
   },[setIsLogged]);
-  console.log(isLogged);
   return (
     <div className="App">
       <Routes>

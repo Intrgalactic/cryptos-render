@@ -3,7 +3,7 @@ import Header from "layouts/header";
 import Faq from "layouts/faq";
 import { motion } from "framer-motion";
 import Footer from "layouts/footer";
-import { Suspense, lazy, useState } from "react";
+import { Suspense, lazy} from "react";
 import Loader from "layouts/loader";
 const FaqRecord = lazy(() => import("components/faq-record").then(module => {
     return {default:module.FaqRecord}

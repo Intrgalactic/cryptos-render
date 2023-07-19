@@ -4,7 +4,6 @@ import premium from 'assets/images/premium.png';
 import webpBasic from 'assets/images/basic.webp';
 import webpStandard from 'assets/images/standard.webp';
 import webpPremium from 'assets/images/premium.webp';
-import { SectionHeading } from 'components/section-heading';
 import { useRef, lazy, Suspense } from 'react';
 
 const PricingBox = lazy(() => import("components/pricing-box").then(module => {
