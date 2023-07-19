@@ -11,7 +11,7 @@ import Loader from "layouts/loader";
 
 export default function UserAction() {
     const location = useLocation();
-    const search = useMemo(() => { new URLSearchParams(location.search)},[location]);
+    const search = useMemo(() => {return new URLSearchParams(location.search)},[location]);
     const actionCode = search.get('oobCode');
     const mode = search.get('mode');
     const navigate = useNavigate();
